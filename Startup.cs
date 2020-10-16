@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
+using stunning_robot_HR.Data;
 
 namespace stunning_robot_HR
 {
@@ -24,6 +26,8 @@ namespace stunning_robot_HR
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddDbContext<stunning_robot_HRContext>(options =>
+                options.UseSqlite(Configuration.GetConnectionString("stunning_robot_HRContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
