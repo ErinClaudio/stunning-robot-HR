@@ -31,12 +31,6 @@ namespace stunning_robot_HR.Controllers
             }
 
             return View(await staff.ToListAsync());
-
-
-
-
-
-            return View(await _context.Staff.ToListAsync());
         }
 
         // GET: Staff/Details/5
