@@ -8,7 +8,7 @@ using stunning_robot_HR.Data;
 namespace stunning_robot_HR.Migrations
 {
     [DbContext(typeof(stunning_robot_HRContext))]
-    [Migration("20201016173541_InitialCreate")]
+    [Migration("20201021150506_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -22,6 +22,9 @@ namespace stunning_robot_HR.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("LastName")
                         .HasColumnType("TEXT");

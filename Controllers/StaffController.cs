@@ -54,7 +54,7 @@ namespace stunning_robot_HR.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,LastName,TotalHoursWorked,NumberOfAvailableDaysOff")] Staff staff)
+        public async Task<IActionResult> Create([Bind("Id,FirstName,LastName,TotalHoursWorked,NumberOfAvailableDaysOff")] Staff staff)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace stunning_robot_HR.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,LastName,TotalHoursWorked,NumberOfAvailableDaysOff")] Staff staff)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,FirstName,LastName,TotalHoursWorked,NumberOfAvailableDaysOff")] Staff staff)
         {
             if (id != staff.Id)
             {
