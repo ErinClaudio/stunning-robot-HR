@@ -20,8 +20,22 @@ namespace stunning_robot_HR.Controllers
         }
 
         // GET: Staff
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
+            var staff = from m in _context.Staff
+                select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                staff = staff.Where(s => s.LastName.Contains(searchString));
+            }
+
+            return View(await staff.ToListAsync());
+
+
+
+
+
             return View(await _context.Staff.ToListAsync());
         }
 
