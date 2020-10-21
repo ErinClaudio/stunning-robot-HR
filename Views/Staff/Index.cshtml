@@ -9,9 +9,21 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+<form asp-controller="Staff" asp-action="Index">
+    <p>
+        Title: <input type="text" name="SearchString">
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
+
+
 <table class="table">
     <thead>
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.LastName)
             </th>
@@ -27,6 +39,9 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.LastName)
             </td>

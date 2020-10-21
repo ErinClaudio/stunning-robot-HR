@@ -23,6 +23,8 @@ namespace stunning_robot_HR.Models
                 context.Staff.AddRange(
                     new Staff
                     {
+                        
+                        FirstName = "Tony",
                         LastName = "Ruiz",
                         TotalHoursWorked = 200,
                         NumberOfAvailableDaysOff = 11,
@@ -31,6 +33,8 @@ namespace stunning_robot_HR.Models
 
                     new Staff
                     {
+                        
+                        FirstName = "Micheal",
                         LastName = "Jordan",
                         TotalHoursWorked = 120,
                         NumberOfAvailableDaysOff = 8,
@@ -38,6 +42,7 @@ namespace stunning_robot_HR.Models
 
                     new Staff
                     {
+                        FirstName = "Scottie",
                         LastName = "Pippen",
                         TotalHoursWorked = 250,
                         NumberOfAvailableDaysOff = 15,
@@ -45,6 +50,7 @@ namespace stunning_robot_HR.Models
 
                     new Staff
                     {
+                        FirstName = "John",
                         LastName = "Starks",
                         TotalHoursWorked = 300,
                         NumberOfAvailableDaysOff = 20,

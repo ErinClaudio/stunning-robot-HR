@@ -21,6 +21,9 @@ namespace stunning_robot_HR.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("FirstName")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("LastName")
                         .HasColumnType("TEXT");
 

@@ -20,9 +20,17 @@ namespace stunning_robot_HR.Controllers
         }
 
         // GET: Staff
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            return View(await _context.Staff.ToListAsync());
+            var staff = from m in _context.Staff
+                select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                staff = staff.Where(s => s.LastName.Contains(searchString));
+            }
+
+            return View(await staff.ToListAsync());
         }
 
         // GET: Staff/Details/5
@@ -54,7 +62,7 @@ namespace stunning_robot_HR.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,LastName,TotalHoursWorked,NumberOfAvailableDaysOff")] Staff staff)
+        public async Task<IActionResult> Create([Bind("Id,FirstName,LastName,TotalHoursWorked,NumberOfAvailableDaysOff")] Staff staff)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +94,7 @@ namespace stunning_robot_HR.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,LastName,TotalHoursWorked,NumberOfAvailableDaysOff")] Staff staff)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,FirstName,LastName,TotalHoursWorked,NumberOfAvailableDaysOff")] Staff staff)
         {
             if (id != staff.Id)
             {
