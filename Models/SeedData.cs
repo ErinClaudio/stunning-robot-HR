@@ -24,36 +24,38 @@ namespace stunning_robot_HR.Models
                     new Staff
                     {
                         
-                        FirstName = "Tony",
-                        LastName = "Ruiz",
-                        TotalHoursWorked = 200,
-                        NumberOfAvailableDaysOff = 11,
+                        FullName = "Tony Ruiz",
+                        DateOfBirth = 10,
+                        Position = "Customer Service Rep",
+                        StartDate = 3/12/2010,
+                       
                         
                     },
 
                     new Staff
                     {
                         
-                        FirstName = "Micheal",
-                        LastName = "Jordan",
-                        TotalHoursWorked = 120,
-                        NumberOfAvailableDaysOff = 8,
+                        FullName = "Micheal Jordan",
+                        DateOfBirth = 1/15/1974,
+                        Position = "Automotive Tech",
+                        StartDate = 11/22/2000,
+                        
                     },
 
                     new Staff
                     {
-                        FirstName = "Scottie",
-                        LastName = "Pippen",
-                        TotalHoursWorked = 250,
-                        NumberOfAvailableDaysOff = 15,
+                        FullName = "Scottie Pippen",
+                        DateOfBirth = 10/25/1954,
+                        Position = "Sales Rep",
+                        StartDate = 1/12/2015,
                     },
 
                     new Staff
                     {
-                        FirstName = "John",
-                        LastName = "Starks",
-                        TotalHoursWorked = 300,
-                        NumberOfAvailableDaysOff = 20,
+                        FullName = "Jason Kidd",
+                        DateOfBirth = 7/15/1944,
+                        Position = "Custodian",
+                        StartDate = 1/12/2015,
                     }
                 );
                 context.SaveChanges();

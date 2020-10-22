@@ -21,16 +21,16 @@ namespace stunning_robot_HR.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("FirstName")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("LastName")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("NumberOfAvailableDaysOff")
+                    b.Property<int>("DateOfBirth")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("TotalHoursWorked")
+                    b.Property<string>("FullName")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Position")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("StartDate")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("Id");

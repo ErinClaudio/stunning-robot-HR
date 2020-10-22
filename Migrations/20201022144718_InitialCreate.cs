@@ -12,10 +12,10 @@ namespace stunning_robot_HR.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    FirstName = table.Column<string>(nullable: true),
-                    LastName = table.Column<string>(nullable: true),
-                    TotalHoursWorked = table.Column<int>(nullable: false),
-                    NumberOfAvailableDaysOff = table.Column<int>(nullable: false)
+                    FullName = table.Column<string>(nullable: true),
+                    DateOfBirth = table.Column<int>(nullable: false),
+                    Position = table.Column<string>(nullable: true),
+                    StartDate = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

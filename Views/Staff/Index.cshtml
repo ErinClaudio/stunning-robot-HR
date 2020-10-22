@@ -9,29 +9,20 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<form asp-controller="Staff" asp-action="Index">
-    <p>
-        Title: <input type="text" name="SearchString">
-        <input type="submit" value="Filter" />
-    </p>
-</form>
-
-
-
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.FirstName)
+                @Html.DisplayNameFor(model => model.FullName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.LastName)
+                @Html.DisplayNameFor(model => model.DateOfBirth)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TotalHoursWorked)
+                @Html.DisplayNameFor(model => model.Position)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.NumberOfAvailableDaysOff)
+                @Html.DisplayNameFor(model => model.StartDate)
             </th>
             <th></th>
         </tr>
@@ -40,16 +31,16 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
+                @Html.DisplayFor(modelItem => item.FullName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.LastName)
+                @Html.DisplayFor(modelItem => item.DateOfBirth)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TotalHoursWorked)
+                @Html.DisplayFor(modelItem => item.Position)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.NumberOfAvailableDaysOff)
+                @Html.DisplayFor(modelItem => item.StartDate)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
