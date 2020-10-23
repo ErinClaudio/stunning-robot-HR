@@ -25,7 +25,7 @@ namespace stunning_robot_HR.Models
                     {
                         
                         FullName = "Tony Ruiz",
-                        //DateOfBirth =,
+                        DateOfBirth = new DateTime(01/02/2020),
                         Position = "Automotive Tech",
                         //StartDate =,
                         
@@ -35,7 +35,7 @@ namespace stunning_robot_HR.Models
                     {
                         
                         FullName = "Micheal Jordan",
-                        //DateOfBirth =,
+                        DateOfBirth = new DateTime(03/10/2000),
                         Position = "Pharmacy Tech",
                         //StartDate =,
 
