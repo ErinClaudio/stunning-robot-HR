@@ -350,7 +350,7 @@ MigrationBackup/
 
 # globs
 Makefile.in
-*.userprefs
+.userprefs
 *.usertasks
 config.make
 config.status
@@ -438,17 +438,17 @@ $RECYCLE.BIN/
 # Object files
 *.o
 *.ko
-*.obj
+.obj
 *.elf
 
 # Linker output
-*.ilk
+.ilk
 *.map
 *.exp
 
 # Precompiled Headers
 *.gch
-*.pch
+.pch
 
 # Libraries
 *.lib
@@ -457,7 +457,7 @@ $RECYCLE.BIN/
 *.lo
 
 # Shared objects (inc. Windows DLLs)
-*.dll
+.dll
 *.so
 *.so.*
 *.dylib
@@ -465,7 +465,7 @@ $RECYCLE.BIN/
 # Executables
 *.exe
 *.out
-*.app
+.app
 *.i*86
 *.x86_64
 *.hex
@@ -474,7 +474,7 @@ $RECYCLE.BIN/
 *.dSYM/
 *.su
 *.idb
-*.pdb
+.pdb
 
 # Kernel Module Compile Results
 *.mod*
