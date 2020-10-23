@@ -26,6 +26,7 @@ namespace stunning_robot_HR.Models
                         
                         FullName = "Tony Ruiz",
                         //DateOfBirth =,
+                        Position = "Automotive Tech",
                         //StartDate =,
                         
                     },
@@ -35,6 +36,7 @@ namespace stunning_robot_HR.Models
                         
                         FullName = "Micheal Jordan",
                         //DateOfBirth =,
+                        Position = "Pharmacy Tech",
                         //StartDate =,
 
                     },
@@ -43,6 +45,7 @@ namespace stunning_robot_HR.Models
                     {
                         FullName = "Scottie Pippen",
                         //DateOfBirth =,
+                        Position = "Bakery Clerk",
                         //StartDate =,
                     },
 
@@ -50,6 +53,7 @@ namespace stunning_robot_HR.Models
                     {
                         FullName = "John Starks",
                         //DateOfBirth =,
+                        Position = "Optometry Sales",
                         //StartDate =,
                     }
                 );

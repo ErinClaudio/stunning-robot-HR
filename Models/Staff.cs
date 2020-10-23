@@ -14,6 +14,6 @@ namespace stunning_robot_HR.Models
         public string Position { get; set; }
 
         [Display(Name = "Start Date")]
-        public int StartDate { get; set; }
+        public DateTime StartDate { get; set; }
     }
 }
