@@ -8,6 +8,7 @@
       <e p="Areas" t="Include">
         <e p="Identity" t="Include">
           <e p="Data" t="Include">
+            <e p="AdminUser.cs" t="Include" />
             <e p="IdentityDataContext.cs" t="Include" />
           </e>
           <e p="IdentityHostingStartup.cs" t="Include" />
