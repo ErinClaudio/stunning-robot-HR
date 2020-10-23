@@ -23,4 +23,12 @@
     <_ContentIncludedByDefault Remove="Views\Staff\Index.cshtml" />
   </ItemGroup>
 
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Staff\Create.cshtml" />
+    <UpToDateCheckInput Remove="Views\Staff\Delete.cshtml" />
+    <UpToDateCheckInput Remove="Views\Staff\Details.cshtml" />
+    <UpToDateCheckInput Remove="Views\Staff\Edit.cshtml" />
+    <UpToDateCheckInput Remove="Views\Staff\Index.cshtml" />
+  </ItemGroup>
+
 </Project>

@@ -24,36 +24,33 @@ namespace stunning_robot_HR.Models
                     new Staff
                     {
                         
-                        FirstName = "Tony",
-                        LastName = "Ruiz",
-                        TotalHoursWorked = 200,
-                        NumberOfAvailableDaysOff = 11,
+                        FullName = "Tony Ruiz",
+                        //DateOfBirth =,
+                        //StartDate =,
                         
                     },
 
                     new Staff
                     {
                         
-                        FirstName = "Micheal",
-                        LastName = "Jordan",
-                        TotalHoursWorked = 120,
-                        NumberOfAvailableDaysOff = 8,
+                        FullName = "Micheal Jordan",
+                        //DateOfBirth =,
+                        //StartDate =,
+
                     },
 
                     new Staff
                     {
-                        FirstName = "Scottie",
-                        LastName = "Pippen",
-                        TotalHoursWorked = 250,
-                        NumberOfAvailableDaysOff = 15,
+                        FullName = "Scottie Pippen",
+                        //DateOfBirth =,
+                        //StartDate =,
                     },
 
                     new Staff
                     {
-                        FirstName = "John",
-                        LastName = "Starks",
-                        TotalHoursWorked = 300,
-                        NumberOfAvailableDaysOff = 20,
+                        FullName = "John Starks",
+                        //DateOfBirth =,
+                        //StartDate =,
                     }
                 );
                 context.SaveChanges();

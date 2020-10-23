@@ -5,8 +5,9 @@ namespace stunning_robot_HR.Models
 {
     public class Staff
     {
-        [Display(Name = "Full nfame")]
-        public DateTime FullName { get; set; }
+        public int Id {get; set;}
+        [Display(Name = "Full fame")]
+        public string FullName { get; set; }
 
         [Display(Name = "Date of Birth")]
         public DateTime DateOfBirth { get; set; }

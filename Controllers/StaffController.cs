@@ -27,7 +27,7 @@ namespace stunning_robot_HR.Controllers
 
             if (!String.IsNullOrEmpty(searchString))
             {
-                staff = staff.Where(s => s.LastName.Contains(searchString));
+                staff = staff.Where(s => s.FullName.Contains(searchString));
             }
 
             return View(await staff.ToListAsync());
