@@ -14,11 +14,6 @@
       <e p="Data" t="Include">
         <e p="StaffContext.cs" t="Include" />
       </e>
-      <e p="Migrations" t="Include">
-        <e p="20201021153959_InitialCreate.cs" t="Include" />
-        <e p="20201021153959_InitialCreate.Designer.cs" t="Include" />
-        <e p="stunning_robot_HRContextModelSnapshot.cs" t="Include" />
-      </e>
       <e p="Models" t="Include">
         <e p="ErrorViewModel.cs" t="Include" />
         <e p="SeedData.cs" t="Include" />
@@ -41,7 +36,6 @@
       <e p="README.md" t="Include" />
       <e p="Startup.cs" t="Include" />
       <e p="stunning-robot-HR.csproj" t="IncludeRecursive" />
-      <e p="stunning_robot_HR.db" t="Include" />
       <e p="Views" t="Include">
         <e p="_ViewImports.cshtml" t="Include" />
         <e p="_ViewStart.cshtml" t="Include" />
