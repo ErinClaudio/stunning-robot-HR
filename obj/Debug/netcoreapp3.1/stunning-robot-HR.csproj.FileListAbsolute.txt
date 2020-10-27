@@ -188,3 +188,6 @@
 /Users/erinclaudio/Desktop/C# projects/stunning-robot-HR/obj/Debug/netcoreapp3.1/Razor/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml.g.cs
 /Users/erinclaudio/Desktop/C# projects/stunning-robot-HR/obj/Debug/netcoreapp3.1/Razor/Areas/Identity/Pages/_ViewStart.cshtml.g.cs
 /Users/erinclaudio/Desktop/C# projects/stunning-robot-HR/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_LoginPartial.cshtml.g.cs
+/Users/erinclaudio/Desktop/C# projects/stunning-robot-HR/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.Relational.Design.dll
+/Users/erinclaudio/Desktop/C# projects/stunning-robot-HR/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.Sqlite.Design.dll
+/Users/erinclaudio/Desktop/C# projects/stunning-robot-HR/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.SqlServer.Design.dll

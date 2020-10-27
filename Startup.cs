@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
+using stunning_robot_HR.Areas.Identity.Data;
 using stunning_robot_HR.Data;
 
 namespace stunning_robot_HR
@@ -38,9 +39,15 @@ namespace stunning_robot_HR
                 {
                     options.UseSqlite(connectionString);
                 }
-                else
+            });
+            services.AddDbContext<IdentityDataContext>(options =>
+                
+            {
+                var connectionString = Configuration.GetConnectionString("stunning_robot_HRContext");
+
+                if (Environment.IsDevelopment())
                 {
-                    options.UseSqlServer(connectionString);
+                    options.UseSqlite(connectionString);
                 }
             });
         }
