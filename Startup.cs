@@ -42,6 +42,9 @@ namespace stunning_robot_HR
                     options.UseSqlServer(connectionString);
                 }
             });
+
+            services.AddDbContext<DayOffRequestContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("DayOffRequestContext")));
         }
         
         

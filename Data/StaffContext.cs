@@ -2,6 +2,7 @@ using System.Data.Common;
 using Microsoft.EntityFrameworkCore;
 using stunning_robot_HR.Models;
 
+
 namespace stunning_robot_HR.Data
 {
     public class stunning_robot_HRContext : DbContext
@@ -11,7 +12,8 @@ namespace stunning_robot_HR.Data
         {
         }
         
-        public DbSet<Staff> Staff { get; set; } 
+        public DbSet<Staff> Staff { get; set; }
+        //public DbSet<DayOffRequest> DayOffRequest { get; set; }
         
     }
 }
