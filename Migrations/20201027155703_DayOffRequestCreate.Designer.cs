@@ -9,7 +9,7 @@ using stunning_robot_HR.Data;
 namespace stunning_robot_HR.Migrations
 {
     [DbContext(typeof(stunning_robot_HRContext))]
-    [Migration("20201027150653_DayOffRequestCreate")]
+    [Migration("20201027155703_DayOffRequestCreate")]
     partial class DayOffRequestCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -20,22 +20,28 @@ namespace stunning_robot_HR.Migrations
 
             modelBuilder.Entity("stunning_robot_HR.Models.DayOffRequest", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("StaffId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("EndDayOfTimeOffRequest")
+                        .HasColumnType("TEXT");
 
                     b.Property<int>("RequestId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("StaffId")
+                    b.Property<int>("StaffId1")
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("TimeOffRequest")
+                    b.Property<DateTime>("StartDayOfTimeRequest")
                         .HasColumnType("TEXT");
 
-                    b.HasKey("Id");
+                    b.Property<double>("TotalNumberOfAvailableDaysOff")
+                        .HasColumnType("REAL");
 
-                    b.HasIndex("StaffId");
+                    b.HasKey("StaffId");
+
+                    b.HasIndex("StaffId1");
 
                     b.ToTable("DayOffRequest");
                 });
@@ -67,7 +73,7 @@ namespace stunning_robot_HR.Migrations
                 {
                     b.HasOne("stunning_robot_HR.Models.Staff", "Staff")
                         .WithMany("DayOffRequests")
-                        .HasForeignKey("StaffId")
+                        .HasForeignKey("StaffId1")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

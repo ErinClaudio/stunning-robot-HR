@@ -31,27 +31,29 @@ namespace stunning_robot_HR.Migrations
                 name: "DayOffRequest",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
+                    StaffId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     RequestId = table.Column<int>(nullable: false),
-                    TimeOffRequest = table.Column<DateTime>(nullable: false),
-                    StaffId = table.Column<int>(nullable: false)
+                    StartDayOfTimeRequest = table.Column<DateTime>(nullable: false),
+                    EndDayOfTimeOffRequest = table.Column<DateTime>(nullable: false),
+                    TotalNumberOfAvailableDaysOff = table.Column<double>(nullable: false),
+                    StaffId1 = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_DayOffRequest", x => x.Id);
+                    table.PrimaryKey("PK_DayOffRequest", x => x.StaffId);
                     table.ForeignKey(
-                        name: "FK_DayOffRequest_Staff_StaffId",
-                        column: x => x.StaffId,
+                        name: "FK_DayOffRequest_Staff_StaffId1",
+                        column: x => x.StaffId1,
                         principalTable: "Staff",
                         principalColumn: "StaffId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_DayOffRequest_StaffId",
+                name: "IX_DayOffRequest_StaffId1",
                 table: "DayOffRequest",
-                column: "StaffId");
+                column: "StaffId1");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

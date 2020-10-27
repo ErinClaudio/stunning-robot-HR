@@ -6,6 +6,7 @@ namespace stunning_robot_HR.Models
 {
     public class Staff
     {
+        [Key]
         public int StaffId {get; set;}
         
         [Display(Name = "Full fame")]

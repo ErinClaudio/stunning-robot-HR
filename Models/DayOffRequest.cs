@@ -1,22 +1,32 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
+
 namespace stunning_robot_HR.Models
 {
     public class DayOffRequest
     {
 
+        //this the Request identifier 
         public int RequestId { get; set; }
-        public int Id { get; set; }
         
-        [Range(typeof(DateTime), "1/2/2004", "1/1/2020")]
-        [Display(Name = "Day off request")]
+        //this is the length of time requested off
+        
+        [Display(Name = "Start of Day off request")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}" , ApplyFormatInEditMode = true)]
-        public DateTime TimeOffRequest { get; set; }
+        public DateTime StartDayOfTimeRequest { get; set; }
         
+        [Display(Name = "Start of Day off request")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}" , ApplyFormatInEditMode = true)]
+        public DateTime EndDayOfTimeOffRequest { get; set; }
+        
+        public double TotalNumberOfAvailableDaysOff { get; set; }
+        
+        
+        [Key]
         public int StaffId { get; set; }
-        
         public virtual Staff Staff { get; set; }
     }
 }
