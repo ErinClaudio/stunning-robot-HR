@@ -3,29 +3,25 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace stunning_robot_HR.Migrations
 {
-    public partial class DayOffRequestCreate : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropPrimaryKey(
-                name: "PK_Staff",
-                table: "Staff");
-
-            migrationBuilder.DropColumn(
-                name: "Id",
-                table: "Staff");
-
-            migrationBuilder.AddColumn<int>(
-                name: "StaffId",
-                table: "Staff",
-                nullable: false,
-                defaultValue: 0)
-                .Annotation("Sqlite:Autoincrement", true);
-
-            migrationBuilder.AddPrimaryKey(
-                name: "PK_Staff",
-                table: "Staff",
-                column: "StaffId");
+            migrationBuilder.CreateTable(
+                name: "Staff",
+                columns: table => new
+                {
+                    StaffId = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    FullName = table.Column<string>(nullable: true),
+                    DateOfBirth = table.Column<DateTime>(nullable: false),
+                    Position = table.Column<string>(nullable: true),
+                    StartDate = table.Column<DateTime>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Staff", x => x.StaffId);
+                });
 
             migrationBuilder.CreateTable(
                 name: "DayOffRequest",
@@ -61,26 +57,8 @@ namespace stunning_robot_HR.Migrations
             migrationBuilder.DropTable(
                 name: "DayOffRequest");
 
-            migrationBuilder.DropPrimaryKey(
-                name: "PK_Staff",
-                table: "Staff");
-
-            migrationBuilder.DropColumn(
-                name: "StaffId",
-                table: "Staff");
-
-            migrationBuilder.AddColumn<int>(
-                name: "Id",
-                table: "Staff",
-                type: "INTEGER",
-                nullable: false,
-                defaultValue: 0)
-                .Annotation("Sqlite:Autoincrement", true);
-
-            migrationBuilder.AddPrimaryKey(
-                name: "PK_Staff",
-                table: "Staff",
-                column: "Id");
+            migrationBuilder.DropTable(
+                name: "Staff");
         }
     }
 }

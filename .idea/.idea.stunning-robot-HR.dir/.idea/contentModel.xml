@@ -17,10 +17,8 @@
         <e p="StaffContext.cs" t="Include" />
       </e>
       <e p="Migrations" t="Include">
-        <e p="20201023145043_InitialCreate.cs" t="Include" />
-        <e p="20201023145043_InitialCreate.Designer.cs" t="Include" />
-        <e p="20201027155703_DayOffRequestCreate.cs" t="Include" />
-        <e p="20201027155703_DayOffRequestCreate.Designer.cs" t="Include" />
+        <e p="20201027171035_InitialCreate.cs" t="Include" />
+        <e p="20201027171035_InitialCreate.Designer.cs" t="Include" />
         <e p="stunning_robot_HRContextModelSnapshot.cs" t="Include" />
       </e>
       <e p="Models" t="Include">

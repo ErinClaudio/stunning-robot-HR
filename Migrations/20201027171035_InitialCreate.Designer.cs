@@ -9,8 +9,8 @@ using stunning_robot_HR.Data;
 namespace stunning_robot_HR.Migrations
 {
     [DbContext(typeof(stunning_robot_HRContext))]
-    [Migration("20201027155703_DayOffRequestCreate")]
-    partial class DayOffRequestCreate
+    [Migration("20201027171035_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

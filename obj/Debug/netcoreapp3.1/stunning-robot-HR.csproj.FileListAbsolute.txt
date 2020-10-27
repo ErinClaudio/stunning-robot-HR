@@ -173,8 +173,3 @@
 /Users/erinclaudio/Desktop/C# projects/stunning-robot-HR/obj/Debug/netcoreapp3.1/Razor/Views/Staff/Details.cshtml.g.cs
 /Users/erinclaudio/Desktop/C# projects/stunning-robot-HR/obj/Debug/netcoreapp3.1/Razor/Views/Staff/Edit.cshtml.g.cs
 /Users/erinclaudio/Desktop/C# projects/stunning-robot-HR/obj/Debug/netcoreapp3.1/Razor/Views/Staff/Index.cshtml.g.cs
-/Users/erinclaudio/Desktop/C# projects/stunning-robot-HR/obj/Debug/netcoreapp3.1/Razor/Views/DayOffRequest/Create.cshtml.g.cs
-/Users/erinclaudio/Desktop/C# projects/stunning-robot-HR/obj/Debug/netcoreapp3.1/Razor/Views/DayOffRequest/Delete.cshtml.g.cs
-/Users/erinclaudio/Desktop/C# projects/stunning-robot-HR/obj/Debug/netcoreapp3.1/Razor/Views/DayOffRequest/Details.cshtml.g.cs
-/Users/erinclaudio/Desktop/C# projects/stunning-robot-HR/obj/Debug/netcoreapp3.1/Razor/Views/DayOffRequest/Edit.cshtml.g.cs
-/Users/erinclaudio/Desktop/C# projects/stunning-robot-HR/obj/Debug/netcoreapp3.1/Razor/Views/DayOffRequest/Index.cshtml.g.cs
