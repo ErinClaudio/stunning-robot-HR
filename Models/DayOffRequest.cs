@@ -22,6 +22,9 @@ namespace stunning_robot_HR.Models
         
         [Display(Name = "Total Number Of Available Days Off")]
         public double TotalNumberOfAvailableDaysOff { get; set; }
+        
+        [Display(Name = "Total Number Of Hours Worked")]
+        public double TotalNumberOfHoursWorked { get; set; }
 
         public virtual Staff Staff { get; set; }
     }
