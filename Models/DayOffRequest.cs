@@ -15,11 +15,12 @@ namespace stunning_robot_HR.Models
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}" , ApplyFormatInEditMode = true)]
         public DateTime StartDayOfTimeRequest { get; set; }
         
-        [Display(Name = "Start of Day off request")]
+        [Display(Name = "End of Day off request")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}" , ApplyFormatInEditMode = true)]
         public DateTime EndDayOfTimeOffRequest { get; set; }
         
+        [Display(Name = "Total Number Of Available Days Off")]
         public double TotalNumberOfAvailableDaysOff { get; set; }
 
         public virtual Staff Staff { get; set; }
