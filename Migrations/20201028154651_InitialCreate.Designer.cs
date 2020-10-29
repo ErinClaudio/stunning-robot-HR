@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using stunning_robot_HR.Data;
 
 namespace stunning_robot_HR.Migrations
 {
     [DbContext(typeof(stunning_robot_HRContext))]
-    partial class stunning_robot_HRContextModelSnapshot : ModelSnapshot
+    [Migration("20201028154651_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -32,9 +34,6 @@ namespace stunning_robot_HR.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<double>("TotalNumberOfAvailableDaysOff")
-                        .HasColumnType("REAL");
-
-                    b.Property<double>("TotalNumberOfHoursWorked")
                         .HasColumnType("REAL");
 
                     b.HasKey("RequestId");

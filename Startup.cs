@@ -46,7 +46,7 @@ namespace stunning_robot_HR
         
         
         
-        
+        //dotnet aspnet-codegenerator controller -name StaffController -m Staff -dc stunning_robot_HRContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {

@@ -24,37 +24,39 @@ namespace stunning_robot_HR.Models
                     new Staff
                     {
                         
-                        FirstName = "Tony",
-                        LastName = "Ruiz",
-                        TotalHoursWorked = 200,
-                        NumberOfAvailableDaysOff = 11,
+                        FullName = "Tony Ruiz",
+                        DateOfBirth = new DateTime(01/02/2020),
+                        Position = "Automotive Tech",
+                        //StartDate =,
                         
                     },
 
                     new Staff
                     {
                         
-                        FirstName = "Micheal",
-                        LastName = "Jordan",
-                        TotalHoursWorked = 120,
-                        NumberOfAvailableDaysOff = 8,
+                        FullName = "Micheal Jordan",
+                        DateOfBirth = new DateTime(03/10/2000),
+                        Position = "Pharmacy Tech",
+                        //StartDate =,
+
                     },
 
                     new Staff
                     {
-                        FirstName = "Scottie",
-                        LastName = "Pippen",
-                        TotalHoursWorked = 250,
-                        NumberOfAvailableDaysOff = 15,
+                        FullName = "Scottie Pippen",
+                        //DateOfBirth =,
+                        Position = "Bakery Clerk",
+                        //StartDate =,
                     },
 
                     new Staff
                     {
-                        FirstName = "John",
-                        LastName = "Starks",
-                        TotalHoursWorked = 300,
-                        NumberOfAvailableDaysOff = 20,
+                        FullName = "John Starks",
+                        //DateOfBirth =,
+                        Position = "Optometry Sales",
+                        //StartDate =,
                     }
+                    
                 );
                 context.SaveChanges();
             }
