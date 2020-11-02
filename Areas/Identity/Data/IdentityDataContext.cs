@@ -5,12 +5,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using stunning_robot_HR.Areas.Identity.Data;
 
 namespace stunning_robot_HR.Areas.Identity.Data
 {
-    public class IdentityDataContext : IdentityDbContext<IdentityUser>
+    public class IdentityDataContext : IdentityDbContext<stunning_robot_HR>
     {
-        public  (DbContextOptions<IdentityDataContext> options)
+        public IdentityDataContext(DbContextOptions<IdentityDataContext> options)
             : base(options)
         {
         }

@@ -13,6 +13,7 @@ namespace stunning_robot_HR.Data
         
         public DbSet<Staff> Staff { get; set; } 
         public DbSet<DayOffRequest> DayOffRequests { get; set; }
-        //dotnet aspnet-codegenerator controller -name DayOffRequestController -m DayOffRequest -dc stunning_robot_HRContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries
     }
 }
+
+//dotnet aspnet-codegenerator identity -u stunning_robot_HR -fi Account.Register;Account.Manage.Index

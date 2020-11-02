@@ -19,7 +19,7 @@ namespace stunning_robot_HR.Areas.Identity
                     options.UseSqlServer(
                         context.Configuration.GetConnectionString("IdentityDataContextConnection")));
 
-                services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                services.AddDefaultIdentity<Data.stunning_robot_HR>(options => options.SignIn.RequireConfirmedAccount = true)
                     .AddEntityFrameworkStores<IdentityDataContext>();
             });
         }
