@@ -5,6 +5,18 @@
       <e p=".gitignore" t="Include" />
       <e p="appsettings.Development.json" t="Include" />
       <e p="appsettings.json" t="Include" />
+      <e p="Areas" t="Include">
+        <e p="Identity" t="Include">
+          <e p="Data" t="Include">
+            <e p="IdentityDataContext.cs" t="Include" />
+          </e>
+          <e p="IdentityHostingStartup.cs" t="Include" />
+          <e p="Pages" t="Include">
+            <e p="_ValidationScriptsPartial.cshtml" t="Include" />
+            <e p="_ViewStart.cshtml" t="Include" />
+          </e>
+        </e>
+      </e>
       <e p="bin" t="ExcludeRecursive" />
       <e p="Controllers" t="Include">
         <e p="DayOffRequestController.cs" t="Include" />
@@ -43,6 +55,7 @@
       </e>
       <e p="PULL_REQUEST_TEMPLATE.md" t="Include" />
       <e p="README.md" t="Include" />
+      <e p="ScaffoldingReadMe.txt" t="Include" />
       <e p="Startup.cs" t="Include" />
       <e p="stunning-robot-HR.csproj" t="IncludeRecursive" />
       <e p="stunning_robot_HR.db" t="Include" />
@@ -65,6 +78,7 @@
         </e>
         <e p="Shared" t="Include">
           <e p="_Layout.cshtml" t="Include" />
+          <e p="_LoginPartial.cshtml" t="Include" />
           <e p="_ValidationScriptsPartial.cshtml" t="Include" />
           <e p="Error.cshtml" t="Include" />
         </e>
