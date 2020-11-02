@@ -56,6 +56,7 @@ namespace stunning_robot_HR.Models
                         Position = "Optometry Sales",
                         //StartDate =,
                     }
+                    
                 );
                 context.SaveChanges();
             }

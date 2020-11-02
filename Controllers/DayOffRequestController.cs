@@ -54,7 +54,7 @@ namespace stunning_robot_HR.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("RequestId,StartDayOfTimeRequest,EndDayOfTimeOffRequest,TotalNumberOfAvailableDaysOff")] DayOffRequest dayOffRequest)
+        public async Task<IActionResult> Create([Bind("RequestId,StartDayOfTimeRequest,EndDayOfTimeOffRequest,TotalNumberOfAvailableDaysOff,TotalNumberOfHoursWorked")] DayOffRequest dayOffRequest)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace stunning_robot_HR.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("RequestId,StartDayOfTimeRequest,EndDayOfTimeOffRequest,TotalNumberOfAvailableDaysOff")] DayOffRequest dayOffRequest)
+        public async Task<IActionResult> Edit(int id, [Bind("RequestId,StartDayOfTimeRequest,EndDayOfTimeOffRequest,TotalNumberOfAvailableDaysOff,TotalNumberOfHoursWorked")] DayOffRequest dayOffRequest)
         {
             if (id != dayOffRequest.RequestId)
             {
