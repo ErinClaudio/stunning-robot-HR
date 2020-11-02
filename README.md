@@ -1,5 +1,14 @@
 # stunning-robot-HR
 
+NAME
+
+
+ADDRESS
+
+DESCRIPTION
+
+HIGHLIGHTS
+
 This Application is a test project to help my understanding of C#, .Net core SQL and React.
 
 
