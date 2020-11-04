@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "o51urYn+yifL/CbVKsqwkKiyR9wLKvEQv10Xfl4oEN6LrHRV3ZpsxIeVfs3HdS0RxqXK70P3Q+Eshxu/GbT/Sw==",
+  "dgSpecHash": "SedXGcvJgsH210M2asOsoUlhKhIdrfRYPVnBWPnleFgfLBRR1j4HYcW9guutIxcvCJiSmHHm04W5wt3vLOTgMw==",
   "success": true,
-  "projectFilePath": "/Users/erinclaudio/Desktop/C# projects/stunning-robot-HR/stunning-robot-HR.csproj",
+  "projectFilePath": "/Users/erinclaudio/Desktop/C# projects/2nd/stunning-robot-HR/stunning-robot-HR.csproj",
   "expectedPackageFiles": [
     "/Users/erinclaudio/.nuget/packages/microsoft.aspnetcore.html.abstractions/2.2.0/microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "/Users/erinclaudio/.nuget/packages/microsoft.aspnetcore.razor/2.2.0/microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
