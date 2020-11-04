@@ -64,7 +64,7 @@ namespace stunning_robot_HR.Controllers
         // GET: Staff/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            Staff staff = staffRepository.GetStudentByID(id);
+            Staff staff = staffRepository.GetStaffByID(id);
             return View(staff);
         }
 
@@ -77,7 +77,7 @@ namespace stunning_robot_HR.Controllers
         {
             if (ModelState.IsValid)
             {
-                staffRepository.UpdateStudent(staff);
+                staffRepository.UpdateStaff(staff);
                 staffRepository.Save();
                 return RedirectToAction(nameof(Index));
             }

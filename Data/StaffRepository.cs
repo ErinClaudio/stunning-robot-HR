@@ -2,41 +2,42 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Data;
+using Microsoft.EntityFrameworkCore;
 using stunning_robot_HR.Models;
 
 namespace stunning_robot_HR.Data
 {
     public class StaffRepository : IStaffRepository, IDisposable
     {
-        private StaffContext context;
+        private staffContext context; // or is this staffContext or stunning_robot_HR?
 
-        public StudentRepository(StaffContext context)
+        public StaffRepository(staffContext context)
         {
             this.context = context;
         }
 
         public IEnumerable<Staff> GetStaff()
         {
-            return context.Students.ToList();
+            return context.Staff.ToList();
         }
 
         public Staff GetStaffByID(int id)
         {
-            return context.Students.Find(id);
+            return context.Staff.Find(id);
         }
 
         public void InsertStudent(Staff staff)
         {
-            context.Students.Add(staff);
+            context.Staff.Add(staff);
         }
 
-        public void DeleteStudent(int studentID)
+        public void DeleteStaff(int StaffId)
         {
-            Staff staff = context.Students.Find(studentID);
-            context.Students.Remove(staff);
+            Staff staff = context.Staff.Find(StaffId);
+            context.Staff.Remove(staff);
         }
 
-        public void UpdateStudent(Staff student)
+        public void UpdateStudent(Staff staff)
         {
             context.Entry(staff).State = EntityState.Modified;
         }

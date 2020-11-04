@@ -11,7 +11,7 @@ namespace stunning_robot_HR.Data
         public GetStaffByID(int StaffId);
         public void InsertStaff(Staff staff);
         void DeleteStaff(int StaffId);
-        void UpdateStaff(Staff staff);
+        public void UpdateStaff(Staff staff);
         public void Save();
         
     }
