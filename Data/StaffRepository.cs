@@ -9,42 +9,52 @@ namespace stunning_robot_HR.Data
 {
     public class StaffRepository : IStaffRepository, IDisposable
     {
-        private staffContext context; // or is this staffContext or stunning_robot_HR?
+        private stunning_robot_HRContext _context; 
 
-        public StaffRepository(staffContext context)
+        public StaffRepository(stunning_robot_HRContext context)
         {
-            this.context = context;
+            _context = context;
         }
 
         public IEnumerable<Staff> GetStaff()
         {
-            return context.Staff.ToList();
+            return _context.Staff.ToList();
         }
 
         public Staff GetStaffByID(int id)
         {
-            return context.Staff.Find(id);
+            return _context.Staff.Find(id);
+        }
+
+        public void InsertStaff(Staff staff)
+        {
+            throw new NotImplementedException();
         }
 
         public void InsertStudent(Staff staff)
         {
-            context.Staff.Add(staff);
+            _context.Staff.Add(staff);
         }
 
         public void DeleteStaff(int StaffId)
         {
-            Staff staff = context.Staff.Find(StaffId);
-            context.Staff.Remove(staff);
+            Staff staff = _context.Staff.Find(StaffId);
+            _context.Staff.Remove(staff);
+        }
+
+        public void UpdateStaff(Staff staff)
+        {
+            throw new NotImplementedException();
         }
 
         public void UpdateStudent(Staff staff)
         {
-            context.Entry(staff).State = EntityState.Modified;
+            _context.Entry(staff).State = EntityState.Modified;
         }
 
         public void Save()
         {
-            context.SaveChanges();
+            _context.SaveChanges();
         }
 
         private bool disposed = false;
@@ -55,7 +65,7 @@ namespace stunning_robot_HR.Data
             {
                 if (disposing)
                 {
-                    context.Dispose();
+                    _context.Dispose();
                 }
             }
             this.disposed = true;

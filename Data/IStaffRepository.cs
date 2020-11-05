@@ -5,14 +5,14 @@ using stunning_robot_HR.Models;
 
 namespace stunning_robot_HR.Data
 {
-    public class IStaffRepository : IDisposable
+    public interface IStaffRepository
     {
-        public IEnumerable<Staff> GetStaff();
-        public GetStaffByID(int StaffId);
-        public void InsertStaff(Staff staff);
+        IEnumerable<Staff> GetStaff();
+        Staff GetStaffByID(int StaffId);
+        void InsertStaff(Staff staff);
         void DeleteStaff(int StaffId);
-        public void UpdateStaff(Staff staff);
-        public void Save();
+        void UpdateStaff(Staff staff);
+        void Save();
         
     }
 }

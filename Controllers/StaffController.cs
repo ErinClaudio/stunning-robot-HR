@@ -13,14 +13,12 @@ namespace stunning_robot_HR.Controllers
 {
     public class StaffController : Controller
     {
+        private stunning_robot_HRContext _context;
         private  IStaffRepository staffRepository;
-        public StaffController()
+        public StaffController(stunning_robot_HRContext context )
         {
-            this.staffRepository = new StaffRepository(new stunning_robot_HRContext());
-        }
-        public StaffController(IStaffRepository staffRepository)
-        {
-            this.staffRepository = staffRepository;
+            _context = context;
+            this.staffRepository = new StaffRepository(_context);
         }
         
         
@@ -35,7 +33,7 @@ namespace stunning_robot_HR.Controllers
         // GET: Staff/Details/5
         public ViewResult Details(int id)
         {
-            Staff staff = staffRepository.GetStaffById(id);
+            Staff staff = staffRepository.GetStaffByID(id);
             return View(staff);
         }
 
@@ -64,7 +62,7 @@ namespace stunning_robot_HR.Controllers
         // GET: Staff/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            Staff staff = staffRepository.GetStaffByID(id);
+            Staff staff = staffRepository.GetStaffByID(id ?? 0);
             return View(staff);
         }
 
@@ -87,7 +85,7 @@ namespace stunning_robot_HR.Controllers
         // GET: Staff/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            Staff staff = staffRepository.GetStaffByID(id);
+            Staff staff = staffRepository.GetStaffByID(id ?? 0);
             return View(staff);
         }
 
@@ -109,7 +107,7 @@ namespace stunning_robot_HR.Controllers
         */
         protected override void Dispose(bool disposing)
         {
-            staffRepository.Dispose();
+            _context.Dispose();
             base.Dispose(disposing);
         }
     }
