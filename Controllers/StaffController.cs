@@ -12,37 +12,21 @@ namespace stunning_robot_HR.Controllers
 {
     public class StaffController : Controller
     {
-        private readonly stunning_robot_HRContext _context;
-
-        public StaffController(stunning_robot_HRContext context)
-        {
-            _context = context;
-        }
+        private UnitOfWork unitOfWork = new UnitOfWork();
 
         // GET: Staff
-        public async Task<IActionResult> Index()
+        public ViewResult Index()
         {
-            return View(await _context.Staff.ToListAsync());
+            var courses = unitOfWork.StaffRepository.Get(includeProperties: "Staff");
+            return View(Staff.ToList());
         }
 
         // GET: Staff/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public ViewResult Details(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var staff = await _context.Staff
-                .FirstOrDefaultAsync(m => m.StaffId == id);
-            if (staff == null)
-            {
-                return NotFound();
-            }
-
+            Staff staff = unitOfWork.StaffRepository.GetByID(id);
             return View(staff);
         }
-
         // GET: Staff/Create
         public IActionResult Create()
         {
@@ -58,8 +42,8 @@ namespace stunning_robot_HR.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(staff);
-                await _context.SaveChangesAsync();
+                unitOfWork.StaffRepository.Insert(staff);
+                unitOfWork.Save();
                 return RedirectToAction(nameof(Index));
             }
             return View(staff);
@@ -68,16 +52,7 @@ namespace stunning_robot_HR.Controllers
         // GET: Staff/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var staff = await _context.Staff.FindAsync(id);
-            if (staff == null)
-            {
-                return NotFound();
-            }
+            Staff staff = unitOfWork.StaffRepository.GetByID(id);
             return View(staff);
         }
 
@@ -95,28 +70,14 @@ namespace stunning_robot_HR.Controllers
 
             if (ModelState.IsValid)
             {
-                try
-                {
-                    _context.Update(staff);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!StaffExists(staff.StaffId))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
+                unitOfWork.StaffRepository.Update(staff);
+                unitOfWork.Save();
                 return RedirectToAction(nameof(Index));
             }
             return View(staff);
         }
 
-        // GET: Staff/Delete/5
+        /* GET: Staff/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -148,6 +109,12 @@ namespace stunning_robot_HR.Controllers
         private bool StaffExists(int id)
         {
             return _context.Staff.Any(e => e.StaffId == id);
+        } */
+
+        protected override void Dispose(bool disposing)
+        {
+            unitOfWork.Dispose();
+            base.Dispose(disposing);
         }
     }
 }

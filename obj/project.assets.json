@@ -8789,11 +8789,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/erinclaudio/Desktop/C# projects/stunning-robot-HR/stunning-robot-HR.csproj",
+      "projectUniqueName": "/Users/erinclaudio/Desktop/C# projects/2nd/stunning-robot-HR/stunning-robot-HR.csproj",
       "projectName": "stunning-robot-HR",
-      "projectPath": "/Users/erinclaudio/Desktop/C# projects/stunning-robot-HR/stunning-robot-HR.csproj",
+      "projectPath": "/Users/erinclaudio/Desktop/C# projects/2nd/stunning-robot-HR/stunning-robot-HR.csproj",
       "packagesPath": "/Users/erinclaudio/.nuget/packages/",
-      "outputPath": "/Users/erinclaudio/Desktop/C# projects/stunning-robot-HR/obj/",
+      "outputPath": "/Users/erinclaudio/Desktop/C# projects/2nd/stunning-robot-HR/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/erinclaudio/.nuget/NuGet/NuGet.Config"
