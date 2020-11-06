@@ -13,6 +13,8 @@
         <e p="StaffController.cs" t="Include" />
       </e>
       <e p="Data" t="Include">
+        <e p="DayOffRequestRepository.cs" t="Include" />
+        <e p="IDayOffRequestRepository.cs" t="Include" />
         <e p="IStaffRepository.cs" t="Include" />
         <e p="StaffContext.cs" t="Include" />
         <e p="StaffRepository.cs" t="Include" />

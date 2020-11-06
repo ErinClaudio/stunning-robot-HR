@@ -1,4 +1,5 @@
 using System;
+using System.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -12,40 +13,34 @@ namespace stunning_robot_HR.Controllers
 {
     public class DayOffRequestController : Controller
     {
-        private readonly stunning_robot_HRContext _context;
-
+        private stunning_robot_HRContext _context;
+        private  IDayOffRequestRepository dayOffRequestRepository;
+        
         public DayOffRequestController(stunning_robot_HRContext context)
         {
             _context = context;
+            this.dayOffRequestRepository= new DayOffRequestRepository(_context);
         }
 
         // GET: DayOffRequest
         public async Task<IActionResult> Index()
         {
-            return View(await _context.DayOffRequests.ToListAsync());
+            var dayOffRequests = from s in dayOffRequestRepository.GetDayOffRequest()
+                select s;
+            return View(dayOffRequests);
         }
 
         // GET: DayOffRequest/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public ViewResult Details(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var dayOffRequest = await _context.DayOffRequests
-                .FirstOrDefaultAsync(m => m.RequestId == id);
-            if (dayOffRequest == null)
-            {
-                return NotFound();
-            }
-
+            DayOffRequest dayOffRequest = dayOffRequestRepository.GetDayOffRequestById(id);
             return View(dayOffRequest);
         }
 
         // GET: DayOffRequest/Create
         public IActionResult Create()
         {
+            
             return View();
         }
 
@@ -68,16 +63,8 @@ namespace stunning_robot_HR.Controllers
         // GET: DayOffRequest/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            DayOffRequest dayOffRequest = dayOffRequestRepository.GetDayOffRequestById(id ?? 0);
 
-            var dayOffRequest = await _context.DayOffRequests.FindAsync(id);
-            if (dayOffRequest == null)
-            {
-                return NotFound();
-            }
             return View(dayOffRequest);
         }
 
@@ -86,55 +73,25 @@ namespace stunning_robot_HR.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("RequestId,StartDayOfTimeRequest,EndDayOfTimeOffRequest,TotalNumberOfAvailableDaysOff,TotalNumberOfHoursWorked")] DayOffRequest dayOffRequest)
+        /*public async Task<IActionResult> Edit(int id, [Bind("RequestId,StartDayOfTimeRequest,EndDayOfTimeOffRequest,TotalNumberOfAvailableDaysOff,TotalNumberOfHoursWorked")] DayOffRequest dayOffRequest)
         {
-            if (id != dayOffRequest.RequestId)
-            {
-                return NotFound();
-            }
-
             if (ModelState.IsValid)
             {
-                try
-                {
-                    _context.Update(dayOffRequest);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!DayOffRequestExists(dayOffRequest.RequestId))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
+                dayOffRequest.UpdateDayOffRequest(dayOffRequest);
+                dayOffRequest.Save();
                 return RedirectToAction(nameof(Index));
             }
             return View(dayOffRequest);
-        }
+        }*/
 
         // GET: DayOffRequest/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var dayOffRequest = await _context.DayOffRequests
-                .FirstOrDefaultAsync(m => m.RequestId == id);
-            if (dayOffRequest == null)
-            {
-                return NotFound();
-            }
-
+            DayOffRequest dayOffRequest = dayOffRequestRepository.GetDayOffRequestById(id ?? 0);
             return View(dayOffRequest);
         }
 
-        // POST: DayOffRequest/Delete/5
+        /* POST: DayOffRequest/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -148,6 +105,12 @@ namespace stunning_robot_HR.Controllers
         private bool DayOffRequestExists(int id)
         {
             return _context.DayOffRequests.Any(e => e.RequestId == id);
+        }
+        */
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+            base.Dispose(disposing);
         }
     }
 }

@@ -31,10 +31,10 @@ namespace stunning_robot_HR.Data
             throw new NotImplementedException();
         }
 
-        public void InsertStudent(Staff staff)
+        /*public void InsertStudent(Staff staff)
         {
             _context.Staff.Add(staff);
-        }
+        }*/
 
         public void DeleteStaff(int StaffId)
         {
