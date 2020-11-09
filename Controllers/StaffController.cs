@@ -102,7 +102,7 @@ namespace stunning_robot_HR.Controllers
             return View(staff);
         }
 
-        /*/ POST: Staff/Delete/5
+        // POST: Staff/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -117,7 +117,6 @@ namespace stunning_robot_HR.Controllers
         {
             return _context.Staff.Any(e => e.StaffId == id);
         }
-        */
         protected override void Dispose(bool disposing)
         {
             _context.Dispose();
