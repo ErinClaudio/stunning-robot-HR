@@ -9,7 +9,7 @@ namespace stunning_robot_HR.Data
 {
     public class StaffRepository : IStaffRepository, IDisposable
     {
-        private stunning_robot_HRContext _context; 
+        private stunning_robot_HRContext _context;
 
         public StaffRepository(stunning_robot_HRContext context)
         {
@@ -20,21 +20,34 @@ namespace stunning_robot_HR.Data
         {
             return _context.Staff.ToList();
         }
+        
+        
+        /* public void SearchStaff(string searchString);
+           
+         var staffs = from s in _context.Staff.ToList()
+                select s;
+             
+            if (!String.IsNullOrEmpty(searchString))
+        {
+            staffs = staffs.Where(s => s.FullName.Contains(searchString));
+        
+        return View(staffs);*/
 
         public Staff GetStaffByID(int id)
         {
             return _context.Staff.Find(id);
         }
 
+        public void SearchStaff(string searchString)
+        {
+            throw new NotImplementedException();
+        }
+
+
         public void InsertStaff(Staff staff)
         {
             _context.Staff.Add(staff);
         }
-
-        /*public void InsertStaff(Staff staff)
-        {
-            throw new NotImplementedException();
-        }*/
         
 
         public void DeleteStaff(int StaffId)

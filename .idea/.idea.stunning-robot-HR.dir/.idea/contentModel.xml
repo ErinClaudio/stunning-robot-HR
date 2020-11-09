@@ -78,6 +78,7 @@
           <e p="Details.cshtml" t="Include" />
           <e p="Edit.cshtml" t="Include" />
           <e p="Index.cshtml" t="Include" />
+          <e p="SearchStaff.cshtml" t="Include" />
         </e>
       </e>
       <e p="wwwroot" t="Include">
