@@ -73,16 +73,16 @@ namespace stunning_robot_HR.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        /*public async Task<IActionResult> Edit(int id, [Bind("RequestId,StartDayOfTimeRequest,EndDayOfTimeOffRequest,TotalNumberOfAvailableDaysOff,TotalNumberOfHoursWorked")] DayOffRequest dayOffRequest)
+        public async Task<IActionResult> Edit(int id, [Bind("RequestId,StartDayOfTimeRequest,EndDayOfTimeOffRequest,TotalNumberOfAvailableDaysOff,TotalNumberOfHoursWorked")] DayOffRequest dayOffRequest)
         {
             if (ModelState.IsValid)
             {
-                dayOffRequest.UpdateDayOffRequest(dayOffRequest);
-                dayOffRequest.Save();
+                dayOffRequestRepository.UpdateDayOffRequest(dayOffRequest);
+                dayOffRequestRepository.Save();
                 return RedirectToAction(nameof(Index));
             }
             return View(dayOffRequest);
-        }*/
+        }
 
         // GET: DayOffRequest/Delete/5
         public async Task<IActionResult> Delete(int? id)
@@ -91,7 +91,7 @@ namespace stunning_robot_HR.Controllers
             return View(dayOffRequest);
         }
 
-        /* POST: DayOffRequest/Delete/5
+        // POST: DayOffRequest/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -106,7 +106,7 @@ namespace stunning_robot_HR.Controllers
         {
             return _context.DayOffRequests.Any(e => e.RequestId == id);
         }
-        */
+    
         protected override void Dispose(bool disposing)
         {
             _context.Dispose();
