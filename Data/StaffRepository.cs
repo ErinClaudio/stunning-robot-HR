@@ -28,13 +28,14 @@ namespace stunning_robot_HR.Data
 
         public void InsertStaff(Staff staff)
         {
-            throw new NotImplementedException();
+            _context.Staff.Add(staff);
         }
 
-        /*public void InsertStudent(Staff staff)
+        /*public void InsertStaff(Staff staff)
         {
-            _context.Staff.Add(staff);
+            throw new NotImplementedException();
         }*/
+        
 
         public void DeleteStaff(int StaffId)
         {

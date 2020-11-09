@@ -32,6 +32,7 @@ namespace stunning_robot_HR.Controllers
              {
                  staffs = staffs.Where(s => s.FullName.Contains(searchString));
              }
+             
              return View(staffs);
         }
 
