@@ -39,4 +39,8 @@
     <UpToDateCheckInput Remove="Views\Staff\Index.cshtml" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\favicon.ico" />
+  </ItemGroup>
+
 </Project>
