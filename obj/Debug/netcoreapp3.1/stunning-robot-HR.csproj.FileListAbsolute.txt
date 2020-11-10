@@ -178,3 +178,4 @@
 /Users/erinclaudio/Desktop/C# projects/stunning-robot-HR/obj/Debug/netcoreapp3.1/Razor/Views/DayOffRequest/Details.cshtml.g.cs
 /Users/erinclaudio/Desktop/C# projects/stunning-robot-HR/obj/Debug/netcoreapp3.1/Razor/Views/DayOffRequest/Edit.cshtml.g.cs
 /Users/erinclaudio/Desktop/C# projects/stunning-robot-HR/obj/Debug/netcoreapp3.1/Razor/Views/DayOffRequest/Index.cshtml.g.cs
+/Users/erinclaudio/Desktop/C# projects/stunning-robot-HR/obj/Debug/netcoreapp3.1/Razor/Views/Staff/SearchStaff.cshtml.g.cs
