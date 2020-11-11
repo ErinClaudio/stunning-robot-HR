@@ -1,0 +1,41 @@
+@model IEnumerable<stunning_robot_HR.Models.TimeWorkedAndVacation>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index-- ADMIN ONLY FEATURE</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalNumberOfDaysWorked)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalNumberOfAvailableVacationDays)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalNumberOfDaysWorked)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalNumberOfAvailableVacationDays)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.TimeWorkedAndVacationId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.TimeWorkedAndVacationId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.TimeWorkedAndVacationId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
