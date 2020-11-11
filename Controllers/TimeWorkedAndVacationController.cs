@@ -56,8 +56,34 @@ namespace stunning_robot_HR.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("TimeWorkedAndVacationId,TotalNumberOfDaysWorked,TotalNumberOfAvailableVacationDays")] TimeWorkedAndVacation timeWorkedAndVacation)
         {
+            
             if (ModelState.IsValid)
             {
+                /* I need this method to work so that when I enter TotalNumberOfDaysWorked it 
+                 * auto increments the TotalNumberOfAvailableVacationDays. 
+                 * the following amounts
+                 * if (TotalNumberOfDaysWorked <= 20){
+                 * TotalNumberOfAvailableVacationDays = .25}
+                 * else if (TotalNumberOfDaysWorked <= 40){
+                 * TotalNumberOfAvailableVacationDays = .50}
+                 * else if (TotalNumberOfDaysWorked <= 60){
+                 * TotalNumberOfAvailableVacationDays = .75}
+                 * else if (TotalNumberOfDaysWorked <= 80){
+                 * TotalNumberOfAvailableVacationDays = 1.0}
+                 * else if (TotalNumberOfDaysWorked <= 100){
+                 * TotalNumberOfAvailableVacationDays = 1.25}
+                 * else if (TotalNumberOfDaysWorked <= 120){
+                 * TotalNumberOfAvailableVacationDays = 1.50}
+                 * else if (TotalNumberOfDaysWorked <= 140){
+                 * TotalNumberOfAvailableVacationDays = 1.75}
+                 * else if (TotalNumberOfDaysWorked <= 160){
+                 * TotalNumberOfAvailableVacationDays = 2.00}
+                 * else(TotalNumberOfDaysWorked => 160){
+                 * return"please see a supervisor"}
+                 */
+                
+                
+                
                 _context.Add(timeWorkedAndVacation);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
