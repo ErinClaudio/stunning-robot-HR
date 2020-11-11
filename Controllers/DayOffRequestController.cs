@@ -59,6 +59,15 @@ namespace stunning_robot_HR.Controllers
             }
             return View(dayOffRequest);
         }
+        
+        //New method/s only for employees
+        /*this method shows that if you are logged in as an
+         employee you can see your total number of days off you have available.
+         and 
+         
+         
+         */ 
+        
 
         // GET: DayOffRequest/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -70,7 +79,6 @@ namespace stunning_robot_HR.Controllers
 
         // POST: DayOffRequest/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("RequestId,StartDayOfTimeRequest,EndDayOfTimeOffRequest,TotalNumberOfAvailableDaysOff,TotalNumberOfHoursWorked")] DayOffRequest dayOffRequest)

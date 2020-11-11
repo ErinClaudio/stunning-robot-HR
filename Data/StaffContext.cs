@@ -13,5 +13,6 @@ namespace stunning_robot_HR.Data
         
         public DbSet<Staff> Staff { get; set; } 
         public DbSet<DayOffRequest> DayOffRequests { get; set; }
+        public DbSet<TimeWorkedAndVacation> TimeWorkedAndVacation { get; set; }
     }
 }

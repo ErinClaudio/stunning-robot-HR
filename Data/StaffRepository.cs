@@ -21,18 +21,6 @@ namespace stunning_robot_HR.Data
             return _context.Staff.ToList();
         }
         
-        
-        /* public void SearchStaff(string searchString);
-           
-         var staffs = from s in _context.Staff.ToList()
-                select s;
-             
-            if (!String.IsNullOrEmpty(searchString))
-        {
-            staffs = staffs.Where(s => s.FullName.Contains(searchString));
-        
-        return View(staffs);*/
-
         public Staff GetStaffByID(int id)
         {
             return _context.Staff.Find(id);
@@ -57,11 +45,6 @@ namespace stunning_robot_HR.Data
         }
 
         public void UpdateStaff(Staff staff)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void UpdateStudent(Staff staff)
         {
             _context.Entry(staff).State = EntityState.Modified;
         }

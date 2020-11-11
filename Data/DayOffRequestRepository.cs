@@ -21,11 +21,6 @@ namespace stunning_robot_HR.Data
             return _context.DayOffRequests.ToList();
         }
 
-        public DayOffRequest RequestId(int RequestId)
-        {
-            throw new NotImplementedException();
-        }
-
         public DayOffRequest GetDayOffRequestById(int id)
         {
             return _context.DayOffRequests.Find(id);
@@ -41,22 +36,12 @@ namespace stunning_robot_HR.Data
             DayOffRequest dayOffRequest = _context.DayOffRequests.Find(RequestId);
             _context.DayOffRequests.Remove(dayOffRequest);
         }
-
-        public void UpdateSDayOffRequest(DayOffRequest dayOffRequest)
-        {
-            throw new NotImplementedException();
-        }
-
+        
         public void UpdateDayOffRequest(DayOffRequest dayOffRequest)
         {
             throw new NotImplementedException();
         }
-
-        /*public void UpdateStudent(Student student)
-        {
-            context.Entry(student).State = EntityState.Modified;
-        }*/
-
+        
         public void Save()
         {
             _context.SaveChanges();
