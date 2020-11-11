@@ -184,3 +184,4 @@
 /Users/erinclaudio/Desktop/C# projects/stunning-robot-HR/obj/Debug/netcoreapp3.1/Razor/Views/TimeWorkedAndVacation/Details.cshtml.g.cs
 /Users/erinclaudio/Desktop/C# projects/stunning-robot-HR/obj/Debug/netcoreapp3.1/Razor/Views/TimeWorkedAndVacation/Edit.cshtml.g.cs
 /Users/erinclaudio/Desktop/C# projects/stunning-robot-HR/obj/Debug/netcoreapp3.1/Razor/Views/TimeWorkedAndVacation/Index.cshtml.g.cs
+/Users/erinclaudio/Desktop/C# projects/stunning-robot-HR/obj/Debug/netcoreapp3.1/Razor/Views/TimeWorkedAndVacation/VacationTimeTotal.cshtml.g.cs

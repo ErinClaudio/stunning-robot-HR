@@ -54,42 +54,61 @@ namespace stunning_robot_HR.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("TimeWorkedAndVacationId,TotalNumberOfDaysWorked,TotalNumberOfAvailableVacationDays")] TimeWorkedAndVacation timeWorkedAndVacation)
+        /*public async Task<RedirectToActionResult> Create([Bind("TimeWorkedAndVacationId,TotalNumberOfDaysWorked,TotalNumberOfAvailableVacationDays")] TimeWorkedAndVacation timeWorkedAndVacation)
         {
-            
             if (ModelState.IsValid)
             {
-                /* I need this method to work so that when I enter TotalNumberOfDaysWorked it 
-                 * auto increments the TotalNumberOfAvailableVacationDays. 
-                 * the following amounts
-                 * if (TotalNumberOfDaysWorked <= 20){
-                 * TotalNumberOfAvailableVacationDays = .25}
-                 * else if (TotalNumberOfDaysWorked <= 40){
-                 * TotalNumberOfAvailableVacationDays = .50}
-                 * else if (TotalNumberOfDaysWorked <= 60){
-                 * TotalNumberOfAvailableVacationDays = .75}
-                 * else if (TotalNumberOfDaysWorked <= 80){
-                 * TotalNumberOfAvailableVacationDays = 1.0}
-                 * else if (TotalNumberOfDaysWorked <= 100){
-                 * TotalNumberOfAvailableVacationDays = 1.25}
-                 * else if (TotalNumberOfDaysWorked <= 120){
-                 * TotalNumberOfAvailableVacationDays = 1.50}
-                 * else if (TotalNumberOfDaysWorked <= 140){
-                 * TotalNumberOfAvailableVacationDays = 1.75}
-                 * else if (TotalNumberOfDaysWorked <= 160){
-                 * TotalNumberOfAvailableVacationDays = 2.00}
-                 * else(TotalNumberOfDaysWorked => 160){
-                 * return"please see a supervisor"}
-                 */
-                
-                
-                
                 _context.Add(timeWorkedAndVacation);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(timeWorkedAndVacation);
+            return View(TimeWorkedAndVacation);
         }
+        */
+        public string VacationTimeTotal(string days)
+        {
+            if (TotalNumberOfDaysWorked <= 20)
+            {
+                TotalNumberOfAvailableVacationDays = "1";
+            }
+            else if (TotalNumberOfDaysWorked <= 40)
+            {
+                TotalNumberOfAvailableVacationDays = "2";
+            }
+            else if (TotalNumberOfDaysWorked <= 60)
+            {
+                TotalNumberOfAvailableVacationDays = "3";
+            }
+            else if (TotalNumberOfDaysWorked <= 80)
+            {
+                TotalNumberOfAvailableVacationDays = "4";
+            }
+            else if (TotalNumberOfDaysWorked <= 100)
+            {
+                TotalNumberOfAvailableVacationDays = "5";
+            }
+            else if (TotalNumberOfDaysWorked <= 120)
+            {
+                TotalNumberOfAvailableVacationDays = "6";
+            }
+            else if (TotalNumberOfDaysWorked <= 140)
+            {
+                TotalNumberOfAvailableVacationDays = "7";}
+            else if (TotalNumberOfDaysWorked <= 160)
+            {
+                TotalNumberOfAvailableVacationDays = "8";
+            }
+            else
+            {
+                return "please see a supervisor";
+            }
+
+            return TotalNumberOfAvailableVacationDays;
+        }
+
+        public int TotalNumberOfDaysWorked { get; set; }
+
+        public string TotalNumberOfAvailableVacationDays { get; set; }
 
         // GET: TimeWorkedAndVacation/Edit/5
         public async Task<IActionResult> Edit(int? id)
