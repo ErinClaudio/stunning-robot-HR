@@ -25,10 +25,18 @@ namespace stunning_robot_HR.Data
         {
             return _context.Staff.Find(id);
         }
+        
 
-        public void SearchStaff(string searchString)
+        public  void GetStaffByFullName(string searchString)
         {
-            throw new NotImplementedException();
+            var staffs = from s in GetStaff()
+                select s;
+             
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                staffs = staffs.Where(s => s.FullName.Contains(searchString));
+            }
+            
         }
 
 
