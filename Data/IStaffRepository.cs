@@ -9,7 +9,7 @@ namespace stunning_robot_HR.Data
     {
         IEnumerable<Staff> GetStaff();
         Staff GetStaffByID(int StaffId);
-        void GetStaffByFullName(string searchString);
+        Staff GetStaffByFullName(string searchString);
         void InsertStaff(Staff staff);
         void DeleteStaff(int StaffId);
         void UpdateStaff(Staff staff);

@@ -27,7 +27,7 @@ namespace stunning_robot_HR.Data
         }
         
 
-        public  void GetStaffByFullName(string searchString)
+        string GetStaffByFullName(string searchString)
         {
             var staffs = from s in GetStaff()
                 select s;
@@ -36,7 +36,7 @@ namespace stunning_robot_HR.Data
             {
                 staffs = staffs.Where(s => s.FullName.Contains(searchString));
             }
-            
+            return _context.Staff.GetStaffByFullName;//LOOK HERE
         }
 
 
@@ -81,5 +81,5 @@ namespace stunning_robot_HR.Data
             Dispose(true);
             GC.SuppressFinalize(this);
         }
-    }
+  }
 }
