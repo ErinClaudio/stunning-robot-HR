@@ -30,10 +30,10 @@ namespace stunning_robot_HR.Controllers
              return View(staffs);
         }
         
-        public ViewResult SearchStaff(string searchString)
+        /*public ViewResult SearchStaff(string searchString)
         {
             
-        }
+        }*/
 
         // GET: Staff/Details/5
         public ViewResult Details(int id)

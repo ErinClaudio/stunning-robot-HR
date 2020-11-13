@@ -44,7 +44,7 @@ namespace stunning_robot_HR.Controllers
             return View(timeWorkedAndVacation);
         }
 
-        /* GET: TimeWorkedAndVacation/Create
+        // GET: TimeWorkedAndVacation/Create
         public IActionResult Create1()
         {
             return View();
@@ -55,7 +55,8 @@ namespace stunning_robot_HR.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create()
+        
+        /*public async Task<IActionResult> Create()
         {
             var TotalNumberOfDaysWorked = 0;
             var TimeWorkedAndVacation = 0.0125 * (double) TotalNumberOfDaysWorked;
