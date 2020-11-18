@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Index-- view as staff</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -19,9 +19,11 @@
                 @Html.DisplayNameFor(model => model.EndDayOfTimeOffRequest)
             </th>
             <th>
+                <h5>this number should only reflect what has been entered by Admin</h5>
                 @Html.DisplayNameFor(model => model.TotalNumberOfAvailableDaysOff)
             </th>
             <th>
+                <h5>this number should only reflect what has been entered by Admin</h5>
                 @Html.DisplayNameFor(model => model.TotalNumberOfHoursWorked)
             </th>
             <th></th>
