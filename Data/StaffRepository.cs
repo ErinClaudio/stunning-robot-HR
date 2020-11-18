@@ -29,14 +29,14 @@ namespace stunning_robot_HR.Data
 
         public string GetStaffByFullName(string searchString)
         {
-            string staffs = from s in GetStaff()
+            var staffs = from s in GetStaff()
                 select s;
              
             if (!String.IsNullOrEmpty(searchString))
             {
                 staffs = staffs.Where(s => s.FullName.Contains(searchString));
             }
-            return staffs; //LOOK HERE
+            return _context.staffs; //LOOK HERE
         }
 
 
