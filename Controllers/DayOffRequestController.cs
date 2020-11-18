@@ -25,8 +25,7 @@ namespace stunning_robot_HR.Controllers
         // GET: DayOffRequest
         public async Task<IActionResult> Index()
         {
-            var dayOffRequests = from s in dayOffRequestRepository.GetDayOffRequest()
-                select s;
+            var dayOffRequests = dayOffRequestRepository.GetDayOffRequest();
             return View(dayOffRequests);
         }
 
