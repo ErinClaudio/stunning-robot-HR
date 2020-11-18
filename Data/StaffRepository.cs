@@ -27,17 +27,17 @@ namespace stunning_robot_HR.Data
         }
         
 
-        /*public string GetStaffByFullName(string searchString)
+        public string GetStaffByFullName(string searchString)
         {
-            var staffs = from s in GetStaff()
+            string staffs = from s in GetStaff()
                 select s;
              
             if (!String.IsNullOrEmpty(searchString))
             {
                 staffs = staffs.Where(s => s.FullName.Contains(searchString));
             }
-            return _context.staffs; //LOOK HERE
-        }*/
+            return staffs; //LOOK HERE
+        }
 
 
         public void InsertStaff(Staff staff)
