@@ -121,4 +121,7 @@ namespace stunning_robot_HR.Controllers
             base.Dispose(disposing);
         }
     }
+    
+    //dotnet aspnet-codegenerator controller -name Controller -m Movie -dc MvcMovieContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries
+
 }

@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http.Connections;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -45,48 +44,46 @@ namespace stunning_robot_HR.Controllers
         }
 
         // GET: TimeWorkedAndVacation/Create
-        public IActionResult Create1()
+        public IActionResult Create()
         {
             return View();
         }
 
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public  ActionResult Create(TotalNumberOfDaysWorked totalNumberOfDaysWorked, TotalNumberOfAvailableVacationDays totalNumberOfAvailableVacationDays)
+        {
+            totalNumberOfAvailableVacationDays = totalNumberOfDaysWorked * .0125;
+            totalNumberOfDaysWorked = 0;
+            if (ModelState.IsValid)
+            {
+                _context.Add(totalNumberOfDaysWorked,totalNumberOfAvailableVacationDays);
+                _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View();
+        }
+
+
+
         // POST: TimeWorkedAndVacation/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        /*[HttpPost]   this is the original scaffolded method
         [ValidateAntiForgeryToken]
-        
-        /*public async Task<IActionResult> Create()
+        public async Task<IActionResult> Create([Bind("TimeWorkedAndVacationId,TotalNumberOfDaysWorked,TotalNumberOfAvailableVacationDays")] TimeWorkedAndVacation timeWorkedAndVacation)
         {
-            var TotalNumberOfDaysWorked = 0;
-            var TimeWorkedAndVacation = 0.0125 * (double) TotalNumberOfDaysWorked;
-            
             if (ModelState.IsValid)
             {
-                _context.Add(typeof(TimeWorkedAndVacation));
+                _context.Add(timeWorkedAndVacation);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View();
+            return View(timeWorkedAndVacation);
         }*/
-
-        //public object TotalNumberOfAvailableVacationDays { get; set; }
-
-        //public object TotalNumberOfDaysWorked { get; set; }
-
-        /*public double daysoff(double hoursworked)
-        {
-            double totalNumberOfDaysWorked = hoursworked;
-            double AvailableDays = totalNumberOfDaysWorked * 0.0125;
-            /* I want the user to enter a number that will be saved
-             * as the TotalNumberOfDaysWorked.
-             * then I want TotalNumberOfDaysWorked * 0.0125 saved and displayed on the
-             * index page
-             
-            return AvailableDays;
-        }*/
-        
-        
 
         // GET: TimeWorkedAndVacation/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -105,7 +102,9 @@ namespace stunning_robot_HR.Controllers
         }
 
         // POST: TimeWorkedAndVacation/Edit/5
-        // protect overposting attacks, enable the specific properties you want to bind to, for 
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("TimeWorkedAndVacationId,TotalNumberOfDaysWorked,TotalNumberOfAvailableVacationDays")] TimeWorkedAndVacation timeWorkedAndVacation)
         {
@@ -171,4 +170,5 @@ namespace stunning_robot_HR.Controllers
             return _context.TimeWorkedAndVacation.Any(e => e.TimeWorkedAndVacationId == id);
         }
     }
+    
 }

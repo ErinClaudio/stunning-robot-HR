@@ -85,8 +85,7 @@
           <e p="SearchStaff.cshtml" t="Include" />
         </e>
         <e p="TimeWorkedAndVacation" t="Include">
-          <e p="Create1.cshtml" t="Include" />
-          <e p="daysoff.cshtml" t="Include" />
+          <e p="Create.cshtml" t="Include" />
           <e p="Delete.cshtml" t="Include" />
           <e p="Details.cshtml" t="Include" />
           <e p="Edit.cshtml" t="Include" />

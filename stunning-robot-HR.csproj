@@ -24,6 +24,12 @@
     <_ContentIncludedByDefault Remove="UnitTest1\UnitTest1\obj\project.assets.json" />
     <_ContentIncludedByDefault Remove="UnitTest1\UnitTest1\obj\project.packagespec.json" />
     <_ContentIncludedByDefault Remove="UnitTest1\UnitTest1\obj\UnitTest1.csproj.nuget.dgspec.json" />
+    <_ContentIncludedByDefault Remove="Views\TimeWorkedAndVacation\Create1.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\TimeWorkedAndVacation\daysoff.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\TimeWorkedAndVacation\Delete.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\TimeWorkedAndVacation\Details.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\TimeWorkedAndVacation\Edit.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\TimeWorkedAndVacation\Index.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
