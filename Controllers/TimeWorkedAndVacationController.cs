@@ -50,10 +50,20 @@ namespace stunning_robot_HR.Controllers
         }
 
 
-
-        /*[HttpPost]
+        [HttpPost] 
         [ValidateAntiForgeryToken]
-        public  ActionResult Create(TotalNumberOfDaysWorked totalNumberOfDaysWorked, TotalNumberOfAvailableVacationDays totalNumberOfAvailableVacationDays)
+        public async Task<IActionResult> Create([Bind("TimeWorkedAndVacationId,TotalNumberOfDaysWorked,TotalNumberOfAvailableVacationDays")] TimeWorkedAndVacation timeWorkedAndVacation)
+        {
+            if (ModelState.IsValid)
+            {
+                timeWorkedAndVacation.totalNumberOfAvailableVacationDays = timeWorkedAndVacation.totalNumberOfDaysWorked * 1;
+                _context.Add(timeWorkedAndVacation);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(timeWorkedAndVacation);
+        }
+        /*public  ActionResult Create(TotalNumberOfDaysWorked totalNumberOfDaysWorked, TotalNumberOfAvailableVacationDays totalNumberOfAvailableVacationDays)
         {
             totalNumberOfAvailableVacationDays = totalNumberOfDaysWorked * .0125;
             totalNumberOfDaysWorked = 0;
