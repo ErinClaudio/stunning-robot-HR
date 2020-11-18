@@ -51,7 +51,7 @@ namespace stunning_robot_HR.Controllers
 
 
 
-        [HttpPost]
+        /*[HttpPost]
         [ValidateAntiForgeryToken]
         public  ActionResult Create(TotalNumberOfDaysWorked totalNumberOfDaysWorked, TotalNumberOfAvailableVacationDays totalNumberOfAvailableVacationDays)
         {
@@ -65,7 +65,7 @@ namespace stunning_robot_HR.Controllers
             }
 
             return View();
-        }
+        }*/
 
 
 
