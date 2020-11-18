@@ -11,15 +11,22 @@
         <e p="HelloWorld.cs" t="Include" />
         <e p="HomeController.cs" t="Include" />
         <e p="StaffController.cs" t="Include" />
+        <e p="TimeWorkedAndVacationController.cs" t="Include" />
       </e>
       <e p="Data" t="Include">
+        <e p="DayOffRequestRepository.cs" t="Include" />
+        <e p="IDayOffRequestRepository.cs" t="Include" />
+        <e p="IStaffRepository.cs" t="Include" />
         <e p="StaffContext.cs" t="Include" />
+        <e p="StaffRepository.cs" t="Include" />
       </e>
       <e p="Migrations" t="Include">
         <e p="20201028154651_InitialCreate.cs" t="Include" />
         <e p="20201028154651_InitialCreate.Designer.cs" t="Include" />
         <e p="20201028174624_AddHoursWorkedMig.cs" t="Include" />
         <e p="20201028174624_AddHoursWorkedMig.Designer.cs" t="Include" />
+        <e p="20201111170008_TimeWorkedAndVacationController.cs" t="Include" />
+        <e p="20201111170008_TimeWorkedAndVacationController.Designer.cs" t="Include" />
         <e p="stunning_robot_HRContextModelSnapshot.cs" t="Include" />
       </e>
       <e p="Models" t="Include">
@@ -27,6 +34,7 @@
         <e p="ErrorViewModel.cs" t="Include" />
         <e p="SeedData.cs" t="Include" />
         <e p="Staff.cs" t="Include" />
+        <e p="TimeWorkedAndVacation.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
@@ -69,6 +77,14 @@
           <e p="Error.cshtml" t="Include" />
         </e>
         <e p="Staff" t="Include">
+          <e p="Create.cshtml" t="Include" />
+          <e p="Delete.cshtml" t="Include" />
+          <e p="Details.cshtml" t="Include" />
+          <e p="Edit.cshtml" t="Include" />
+          <e p="Index.cshtml" t="Include" />
+          <e p="SearchStaff.cshtml" t="Include" />
+        </e>
+        <e p="TimeWorkedAndVacation" t="Include">
           <e p="Create.cshtml" t="Include" />
           <e p="Delete.cshtml" t="Include" />
           <e p="Details.cshtml" t="Include" />
@@ -140,6 +156,6 @@
       </e>
     </e>
     <e p="$USER_HOME$/Library/Caches/JetBrains/Rider2020.2/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/Library/Caches/JetBrains/Rider2020.2/resharper-host/local/Transient/Rider/v202/SolutionCaches/_.19.01" t="ExcludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/JetBrains/Rider2020.2/resharper-host/local/Transient/Rider/v202/SolutionCaches/_.19.00" t="ExcludeRecursive" />
   </component>
 </project>
