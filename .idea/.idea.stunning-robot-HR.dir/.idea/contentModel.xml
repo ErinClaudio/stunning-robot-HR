@@ -10,6 +10,7 @@
         <e p="DayOffRequestController.cs" t="Include" />
         <e p="HelloWorld.cs" t="Include" />
         <e p="HomeController.cs" t="Include" />
+        <e p="SearchForStaff.cs" t="Include" />
         <e p="StaffController.cs" t="Include" />
         <e p="TimeWorkedAndVacationController.cs" t="Include" />
       </e>

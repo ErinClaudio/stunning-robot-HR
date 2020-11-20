@@ -28,11 +28,6 @@ namespace stunning_robot_HR.Controllers
              var staffs = staffRepository.GetStaff();
              return View(staffs);
         }
-        
-        public ViewResult SearchStaff(string searchString)
-        {
-            
-        }
 
         // GET: Staff/Details/5
         public ViewResult Details(int id)
