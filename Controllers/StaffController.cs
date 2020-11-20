@@ -18,7 +18,7 @@ namespace stunning_robot_HR.Controllers
         public StaffController(stunning_robot_HRContext context )
         {
             _context = context;
-            this.staffRepository = new StaffRepository(_context);
+            staffRepository = new StaffRepository(_context);
         }
         
         

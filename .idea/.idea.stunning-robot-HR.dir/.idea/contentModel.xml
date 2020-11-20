@@ -50,6 +50,7 @@
       <e p="Pages" t="Include">
         <e p="SearchForStaff" t="Include">
           <e p="GetStaffByFullName.cshtml" t="Include" />
+          <e p="searchresults.cshtml" t="Include" />
         </e>
       </e>
       <e p="Program.cs" t="Include" />
