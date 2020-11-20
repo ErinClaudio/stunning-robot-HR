@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Data;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using stunning_robot_HR.Models;
 
@@ -20,10 +21,14 @@ namespace stunning_robot_HR.Data
         {
             return _context.Staff.ToList();
         }
-        
         public Staff GetStaffByID(int id)
         {
             return _context.Staff.Find(id);
+        }
+        
+        public Staff GetStaffByFullName(string searchString)
+        {
+            return _context.Staff.Find(searchString);
         }
         
         
@@ -68,10 +73,5 @@ namespace stunning_robot_HR.Data
             Dispose(true);
             GC.SuppressFinalize(this);
         }
-
-    void IStaffRepository.GetStaffByFullName(string searchString)
-    {
-      throw new NotImplementedException();
     }
   }
-}

@@ -15,14 +15,7 @@ namespace stunning_robot_HR.Controllers
         
         public ViewResult GetStaffByFullName(string searchString)
         {
-            var staffs = from s in staffRepository.GetStaff()
-                select s;
-             
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                staffs = staffs.Where(s => s.FullName.Contains(searchString));
-            }
-            return View(searchString);
+          
         }
         
     }

@@ -49,51 +49,21 @@ namespace stunning_robot_HR.Controllers
             return View();
         }
 
-
-        [HttpPost] 
+        // POST: TimeWorkedAndVacation/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("TimeWorkedAndVacationId,TotalNumberOfDaysWorked,TotalNumberOfAvailableVacationDays")] TimeWorkedAndVacation timeWorkedAndVacation)
         {
             if (ModelState.IsValid)
             {
-                timeWorkedAndVacation.totalNumberOfAvailableVacationDays = timeWorkedAndVacation.totalNumberOfDaysWorked * 1;
                 _context.Add(timeWorkedAndVacation);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             return View(timeWorkedAndVacation);
         }
-        /*public  ActionResult Create(TotalNumberOfDaysWorked totalNumberOfDaysWorked, TotalNumberOfAvailableVacationDays totalNumberOfAvailableVacationDays)
-        {
-            totalNumberOfAvailableVacationDays = totalNumberOfDaysWorked * .0125;
-            totalNumberOfDaysWorked = 0;
-            if (ModelState.IsValid)
-            {
-                _context.Add(totalNumberOfDaysWorked,totalNumberOfAvailableVacationDays);
-                _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-
-            return View();
-        }*/
-
-
-
-        // POST: TimeWorkedAndVacation/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        /*[HttpPost]   this is the original scaffolded method
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("TimeWorkedAndVacationId,TotalNumberOfDaysWorked,TotalNumberOfAvailableVacationDays")] TimeWorkedAndVacation timeWorkedAndVacation)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(timeWorkedAndVacation);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(timeWorkedAndVacation);
-        }*/
 
         // GET: TimeWorkedAndVacation/Edit/5
         public async Task<IActionResult> Edit(int? id)
