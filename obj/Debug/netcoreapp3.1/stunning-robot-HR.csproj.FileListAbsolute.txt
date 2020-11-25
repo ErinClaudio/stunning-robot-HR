@@ -185,4 +185,4 @@
 /Users/erinclaudio/Desktop/C# projects/stunning-robot-HR/obj/Debug/netcoreapp3.1/Razor/Views/TimeWorkedAndVacation/Index.cshtml.g.cs
 /Users/erinclaudio/Desktop/C# projects/stunning-robot-HR/obj/Debug/netcoreapp3.1/Razor/Pages/SearchForStaff/GetStaffByFullName.cshtml.g.cs
 /Users/erinclaudio/Desktop/C# projects/stunning-robot-HR/obj/Debug/netcoreapp3.1/Razor/Pages/SearchForStaff/searchresults.cshtml.g.cs
-/Users/erinclaudio/Desktop/C# projects/stunning-robot-HR/obj/Debug/netcoreapp3.1/Razor/Views/Staff/searchresults.cshtml.g.cs
+/Users/erinclaudio/Desktop/C# projects/stunning-robot-HR/obj/Debug/netcoreapp3.1/Razor/Views/Staff/GetStaffByFullName.cshtml.g.cs
