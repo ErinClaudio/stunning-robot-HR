@@ -12,11 +12,15 @@ namespace stunning_robot_HR.Controllers
     {
         private stunning_robot_HRContext _context;
         private IStaffRepository staffRepository;
-
-        //staffRepository.SearchStaff(searchString)
+        
+        public SearchForStaff(stunning_robot_HRContext context )
+        {
+            _context = context;
+            staffRepository = new StaffRepository(_context);
+        }
         public async Task<IActionResult> GetStaffByFullName(string searchString)//are you recommending this so that this method is associated with correct controller?
         {
-            var staff = staffRepository.GetStaffByFullName(searchString);
+            Staff staff = staffRepository.GetStaffByFullName(searchString);
             return View(staff);
         }
 // I made the change to this method name per this comment

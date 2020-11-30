@@ -20,7 +20,7 @@ namespace stunning_robot_HR.Controllers
             _context = context;
             staffRepository = new StaffRepository(_context);
         }
-        
+        //
         
         // GET: Staff
         public async Task<IActionResult> Index()
