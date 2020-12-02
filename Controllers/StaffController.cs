@@ -25,8 +25,8 @@ namespace stunning_robot_HR.Controllers
         // GET: Staff
         public async Task<IActionResult> Index()
         {
-             var staffs = staffRepository.GetStaff();
-             return View(staffs);
+             var staff = staffRepository.GetStaff();
+             return View(staff);
         }
 
         // GET: Staff/Details/5
