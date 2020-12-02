@@ -1,6 +1,13 @@
 @model System.Collections.Generic.IEnumerable<stunning_robot_HR.Models.Staff>
-<!-- this caused an error-->
 
+<!-- try this one first -- model stunning_robot_HR.Models.Staff-->
+<!-- model System.Collections.Generic.IEnumerable<stunning_robot_HR.Models.Staff>-->
+
+<!--this caused an error-->
+
+@{
+    ViewData["Title"] = "GetStaffByFullName";
+}
 
 
 <form asp-controller="SearchForStaff" asp-action="GetStaffByFullName">
