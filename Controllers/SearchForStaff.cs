@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -22,7 +23,9 @@ namespace stunning_robot_HR.Controllers
         public async Task<IActionResult> GetStaffByFullName(string searchString)
         {
             var staff = staffRepository.GetStaffByFullName(searchString);
-            return View(staff); // is this issue here in my return
+            List<stunning_robot_HR.Models.Staff> Staffcollection = new List<Staff>();
+            Staffcollection.Add(staff);
+            return View(Staffcollection); 
         }
         
         
