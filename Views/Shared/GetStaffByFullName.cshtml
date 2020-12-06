@@ -1,34 +1,23 @@
-@model IEnumerable<stunning_robot_HR.Models.Staff>
+@model System.Collections.Generic.IEnumerable<stunning_robot_HR.Models.Staff>
+
+<!-- try this one first -- model stunning_robot_HR.Models.Staff-->
+<!-- model System.Collections.Generic.IEnumerable<stunning_robot_HR.Models.Staff>-->
+
+<!--this caused an error-->
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "GetStaffByFullName";
 }
 
-<h1>Index</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<partial name ="GetStaffByFullName"/>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.FullName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DateOfBirth)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Position)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.StartDate)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
+//
+
+<form asp-controller="SearchForStaff" asp-action="GetStaffByFullName">
+    <p>
+        Title: <input type="text" name="SearchString">
+        <input type="submit" value="Filter" />
+    </p>
+</form>
 @foreach (var item in Model) {
         <tr>
             <td>
@@ -50,5 +39,3 @@
             </td>
         </tr>
 }
-    </tbody>
-</table>
