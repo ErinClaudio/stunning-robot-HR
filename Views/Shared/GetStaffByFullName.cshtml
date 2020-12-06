@@ -1,41 +1,43 @@
 @model System.Collections.Generic.IEnumerable<stunning_robot_HR.Models.Staff>
 
-<!-- try this one first -- model stunning_robot_HR.Models.Staff-->
-<!-- model System.Collections.Generic.IEnumerable<stunning_robot_HR.Models.Staff>-->
-
-<!--this caused an error-->
-
 @{
     ViewData["Title"] = "GetStaffByFullName";
 }
 
 
-//
 
-<form asp-controller="SearchForStaff" asp-action="GetStaffByFullName">
-    <p>
-        Title: <input type="text" name="SearchString">
-        <input type="submit" value="Filter" />
-    </p>
-</form>
+
 @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.FullName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateOfBirth)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Position)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StartDate)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.StaffId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.StaffId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.StaffId">Delete</a>
-            </td>
-        </tr>
-}
+            <dl class="row">
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(modelItem => item.FullName)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(modelItem => item.DateOfBirth)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(modelItem => item.DateOfBirth)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(modelItem => item.Position)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(modelItem => item.Position)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(modelItem => item.StartDate)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </dd>
+            </dl>    
+<div>
+    <a asp-action="Edit" asp-route-id="@item.StaffId">Edit</a> |
+    <a asp-action="Details" asp-route-id="@item.StaffId">Details</a> |
+    <a asp-action="Delete" asp-route-id="@item.StaffId">Delete</a>
+</div>
+        
+} 
