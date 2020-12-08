@@ -83,13 +83,13 @@
           <e p="_Layout.cshtml" t="Include" />
           <e p="_ValidationScriptsPartial.cshtml" t="Include" />
           <e p="Error.cshtml" t="Include" />
+          <e p="GetStaffByFullName.cshtml" t="Include" />
         </e>
         <e p="Staff" t="Include">
           <e p="Create.cshtml" t="Include" />
           <e p="Delete.cshtml" t="Include" />
           <e p="Details.cshtml" t="Include" />
           <e p="Edit.cshtml" t="Include" />
-          <e p="GetStaffByFullName.cshtml" t="Include" />
           <e p="Index.cshtml" t="Include" />
         </e>
         <e p="TimeWorkedAndVacation" t="Include">
