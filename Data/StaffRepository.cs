@@ -28,9 +28,9 @@ namespace stunning_robot_HR.Data
         
         public Staff GetStaffByFullName(string searchString)
         {
-            return _context.Staff.Find(searchString);
+            return _context.Staff.FirstOrDefault(staff => staff.FullName.Contains(searchString));
         }
-        
+        // return _context.Staff.Find(searchString); 
         
         public void InsertStaff(Staff staff)
         {
