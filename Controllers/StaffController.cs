@@ -14,25 +14,25 @@ namespace stunning_robot_HR.Controllers
     public class StaffController : Controller
     {
         private stunning_robot_HRContext _context;
-        private  IStaffRepository staffRepository;
+        private  IStaffRepository _staffRepository;
         public StaffController(stunning_robot_HRContext context )
         {
             _context = context;
-            staffRepository = new StaffRepository(_context);
+            _staffRepository = new StaffRepository(_context); // here
         }
         //
         
         // GET: Staff
         public async Task<IActionResult> Index()
         {
-             var staff = staffRepository.GetStaff();
+             var staff = _staffRepository.GetStaff();
              return View(staff);
         }
 
         // GET: Staff/Details/5
         public ViewResult Details(int id)
         {
-            Staff staff = staffRepository.GetStaffByID(id);
+            Staff staff = _staffRepository.GetStaffByID(id);
             return View(staff);
         }
 
@@ -51,8 +51,8 @@ namespace stunning_robot_HR.Controllers
         {
             if (ModelState.IsValid)
             {
-                staffRepository.InsertStaff(staff);
-                staffRepository.Save();
+                _staffRepository.InsertStaff(staff);
+                _staffRepository.Save();
                 return RedirectToAction(nameof(Index));
             }
             return View(staff);
@@ -61,7 +61,7 @@ namespace stunning_robot_HR.Controllers
         // GET: Staff/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            Staff staff = staffRepository.GetStaffByID(id ?? 0);
+            Staff staff = _staffRepository.GetStaffByID(id ?? 0);
             return View(staff);
         }
 
@@ -74,8 +74,8 @@ namespace stunning_robot_HR.Controllers
         {
             if (ModelState.IsValid)
             {
-                staffRepository.UpdateStaff(staff);
-                staffRepository.Save();
+                _staffRepository.UpdateStaff(staff);
+                _staffRepository.Save();
                 return RedirectToAction(nameof(Index));
             }
             return View(staff);
@@ -84,7 +84,7 @@ namespace stunning_robot_HR.Controllers
         // GET: Staff/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            Staff staff = staffRepository.GetStaffByID(id ?? 0);
+            Staff staff = _staffRepository.GetStaffByID(id ?? 0);
             return View(staff);
         }
 

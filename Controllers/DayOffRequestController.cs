@@ -19,7 +19,7 @@ namespace stunning_robot_HR.Controllers
         public DayOffRequestController(stunning_robot_HRContext context)
         {
             _context = context;
-            this.dayOffRequestRepository= new DayOffRequestRepository(_context);
+            dayOffRequestRepository= new DayOffRequestRepository(_context); //here
         }
 
         // GET: DayOffRequest

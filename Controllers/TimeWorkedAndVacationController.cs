@@ -12,34 +12,28 @@ namespace stunning_robot_HR.Controllers
 {
     public class TimeWorkedAndVacationController : Controller
     {
-        private readonly stunning_robot_HRContext _context;
+        private stunning_robot_HRContext _context;
+        private ITimeWorkedAndVacation _timeWorkedAndVacation;
 
         public TimeWorkedAndVacationController(stunning_robot_HRContext context)
         {
             _context = context;
+            _timeWorkedAndVacation = new TimeWorkedAndVacationRepository(_context); //More "new"
         }
 
         // GET: TimeWorkedAndVacation
         public async Task<IActionResult> Index()
         {
-            return View(await _context.TimeWorkedAndVacation.ToListAsync());
+            var timeWorkedAndVacation = _timeWorkedAndVacation.GetTimeWorkedAndVacations();
+             return View(timeWorkedAndVacation);
         }
 
+        
+
         // GET: TimeWorkedAndVacation/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public ViewResult Details(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var timeWorkedAndVacation = await _context.TimeWorkedAndVacation
-                .FirstOrDefaultAsync(m => m.TimeWorkedAndVacationId == id);
-            if (timeWorkedAndVacation == null)
-            {
-                return NotFound();
-            }
-
+            TimeWorkedAndVacation timeWorkedAndVacation = _timeWorkedAndVacation.GetTimeWorkedAndVacationByID();
             return View(timeWorkedAndVacation);
         }
 
@@ -58,8 +52,8 @@ namespace stunning_robot_HR.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(timeWorkedAndVacation);
-                await _context.SaveChangesAsync();
+                _timeWorkedAndVacation.InsertTimeWorkedAndVacation(timeWorkedAndVacation);
+                _timeWorkedAndVacation.Save();
                 return RedirectToAction(nameof(Index));
             }
             return View(timeWorkedAndVacation);
@@ -68,16 +62,8 @@ namespace stunning_robot_HR.Controllers
         // GET: TimeWorkedAndVacation/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var timeWorkedAndVacation = await _context.TimeWorkedAndVacation.FindAsync(id);
-            if (timeWorkedAndVacation == null)
-            {
-                return NotFound();
-            }
+    
+           TimeWorkedAndVacation timeWorkedAndVacation = _timeWorkedAndVacation.GetTimeWorkedAndVacationByID(id);
             return View(timeWorkedAndVacation);
         }
 
@@ -88,49 +74,20 @@ namespace stunning_robot_HR.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("TimeWorkedAndVacationId,TotalNumberOfDaysWorked,TotalNumberOfAvailableVacationDays")] TimeWorkedAndVacation timeWorkedAndVacation)
         {
-            if (id != timeWorkedAndVacation.TimeWorkedAndVacationId)
-            {
-                return NotFound();
-            }
-
             if (ModelState.IsValid)
             {
-                try
-                {
-                    _context.Update(timeWorkedAndVacation);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!TimeWorkedAndVacationExists(timeWorkedAndVacation.TimeWorkedAndVacationId))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
+                _timeWorkedAndVacation.UpdateTimeWorkedAndVacation(timeWorkedAndVacation);
+                _timeWorkedAndVacation.Save();
                 return RedirectToAction(nameof(Index));
             }
             return View(timeWorkedAndVacation);
         }
 
+
         // GET: TimeWorkedAndVacation/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var timeWorkedAndVacation = await _context.TimeWorkedAndVacation
-                .FirstOrDefaultAsync(m => m.TimeWorkedAndVacationId == id);
-            if (timeWorkedAndVacation == null)
-            {
-                return NotFound();
-            }
-
+            TimeWorkedAndVacation timeWorkedAndVacation = _timeWorkedAndVacation.GetTimeWorkedAndVacationByID(id);
             return View(timeWorkedAndVacation);
         }
 
@@ -149,6 +106,12 @@ namespace stunning_robot_HR.Controllers
         {
             return _context.TimeWorkedAndVacation.Any(e => e.TimeWorkedAndVacationId == id);
         }
-    }
+
+        public override bool Equals(object obj)
+        {
+        return obj is TimeWorkedAndVacationController controller &&
+             EqualityComparer<ITimeWorkedAndVacation>.Default.Equals(_timeWorkedAndVacation, controller._timeWorkedAndVacation);
+        }
+  }
     
 }

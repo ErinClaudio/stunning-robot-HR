@@ -30,7 +30,6 @@ namespace stunning_robot_HR.Data
         {
             return _context.Staff.FirstOrDefault(staff => staff.FullName.Contains(searchString));
         }
-        // return _context.Staff.Find(searchString); 
         
         public void InsertStaff(Staff staff)
         {
