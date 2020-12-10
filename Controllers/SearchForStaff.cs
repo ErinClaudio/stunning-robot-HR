@@ -13,19 +13,19 @@ namespace stunning_robot_HR.Controllers
     public class SearchForStaff : Controller
     {
         private stunning_robot_HRContext _context;
-        private IStaffRepository staffRepository;
+        private IStaffRepository _staffRepository;
         
         public SearchForStaff(stunning_robot_HRContext context,IStaffRepository staffRepo)
         {
             _context = context;
-             staffRepository = staffRepo;
+             _staffRepository = staffRepo;
         }
 
         public async Task<IActionResult> GetStaffByFullName(string searchString)
         {
-            var staff = staffRepository.GetStaffByFullName(searchString);
+            var staff = _staffRepository.GetStaffByFullName(searchString);
             //List<stunning_robot_HR.Models.Staff> Staffcollection = new List<Staff>(); //here 
-            IStaffRepository Staffcollection = staffRepository.GetStaff();
+            IStaffRepository Staffcollection = _staffRepository.GetStaffByFullName(List<Staff>);
             Staffcollection.Add(staff);
             return View(Staffcollection); 
         }
