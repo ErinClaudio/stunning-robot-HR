@@ -15,10 +15,11 @@ namespace stunning_robot_HR.Controllers
         private stunning_robot_HRContext _context;
         private ITimeWorkedAndVacation _timeWorkedAndVacation;
 
-        public TimeWorkedAndVacationController(stunning_robot_HRContext context)
+        public TimeWorkedAndVacationController(stunning_robot_HRContext context, ITimeWorkedAndVacation  timeAndWork)
         {
             _context = context;
-            _timeWorkedAndVacation = new TimeWorkedAndVacationRepository(_context); //More "new"
+            _timeWorkedAndVacation = timeAndWork
+            
         }
 
         // GET: TimeWorkedAndVacation

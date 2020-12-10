@@ -15,12 +15,12 @@ namespace stunning_robot_HR.Controllers
     {
         private stunning_robot_HRContext _context;
         private  IStaffRepository _staffRepository;
-        public StaffController(stunning_robot_HRContext context )
+        public StaffController(stunning_robot_HRContext context,IStaffRepository staffRepo  )
         {
             _context = context;
-            _staffRepository = new StaffRepository(_context); // here
+            _staffRepository = staffRepo;
         }
-        //
+        
         
         // GET: Staff
         public async Task<IActionResult> Index()
