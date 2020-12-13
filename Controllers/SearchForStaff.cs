@@ -25,9 +25,10 @@ namespace stunning_robot_HR.Controllers
         {
             var staff = _staffRepository.GetStaffByFullName(searchString);
             //List<stunning_robot_HR.Models.Staff> Staffcollection = new List<Staff>(); //here 
-            IStaffRepository Staffcollection = _staffRepository.GetStaffByFullName(List<Staff>);
-            Staffcollection.Add(staff);
-            return View(Staffcollection); 
+            //var staffcollection = _staffRepository.GetStaff();
+            var _staffCollection = staffRepository.GetStaff();
+            staffcollection.Add(staff);
+            return View(staffcollection); 
         }
 
         //how to get rid of lines 26 and 27. 
