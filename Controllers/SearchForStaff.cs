@@ -18,17 +18,13 @@ namespace stunning_robot_HR.Controllers
         public SearchForStaff(stunning_robot_HRContext context,IStaffRepository staffRepo)
         {
             _context = context;
-             _staffRepository = staffRepo;
+            _staffRepository = staffRepo;
         }
 
         public async Task<IActionResult> GetStaffByFullName(string searchString)
         {
             var staff = _staffRepository.GetStaffByFullName(searchString);
-            //List<stunning_robot_HR.Models.Staff> Staffcollection = new List<Staff>(); //here 
-            //var staffcollection = _staffRepository.GetStaff();
-            var _staffCollection = staffRepository.GetStaff();
-            staffcollection.Add(staff);
-            return View(staffcollection); 
+            return View(staff); 
         }
 
         //how to get rid of lines 26 and 27. 

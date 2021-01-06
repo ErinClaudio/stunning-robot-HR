@@ -1,4 +1,5 @@
 using System;
+using System.Data
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,12 +16,12 @@ namespace stunning_robot_HR.Controllers
         private stunning_robot_HRContext _context;
         private ITimeWorkedAndVacation _timeWorkedAndVacation;
 
-        public TimeWorkedAndVacationController(stunning_robot_HRContext context, ITimeWorkedAndVacation  timeAndWork)
+        public TimeWorkedAndVacationController(stunning_robot_HRContext context, ITimeWorkedAndVacation  timeAndWork) //maybe here
         {
             _context = context;
-            _timeWorkedAndVacation = timeAndWork
+            _timeWorkedAndVacation = timeAndWork;
             
-        }
+        }// the issue might be here in the constructor 
 
         // GET: TimeWorkedAndVacation
         public async Task<IActionResult> Index()
@@ -31,10 +32,10 @@ namespace stunning_robot_HR.Controllers
 
         
 
-        // GET: TimeWorkedAndVacation/Details/5
+        GET: TimeWorkedAndVacation/Details/5
         public ViewResult Details(int id)
         {
-            TimeWorkedAndVacation timeWorkedAndVacation = _timeWorkedAndVacation.GetTimeWorkedAndVacationByID();
+            TimeWorkedAndVacation timeWorkedAndVacation = _context.GetTimeWorkedAndVacationByID(id);
             return View(timeWorkedAndVacation);
         }
 
@@ -61,12 +62,12 @@ namespace stunning_robot_HR.Controllers
         }
 
         // GET: TimeWorkedAndVacation/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
+        // public async Task<IActionResult> Edit(int? id)
+        // {
     
-           TimeWorkedAndVacation timeWorkedAndVacation = _timeWorkedAndVacation.GetTimeWorkedAndVacationByID(id);
-            return View(timeWorkedAndVacation);
-        }
+        //    TimeWorkedAndVacation timeWorkedAndVacation = _timeWorkedAndVacation.GetTimeWorkedAndVacationByID(id);
+        //     return View(timeWorkedAndVacation);
+        // }
 
         // POST: TimeWorkedAndVacation/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
@@ -86,11 +87,11 @@ namespace stunning_robot_HR.Controllers
 
 
         // GET: TimeWorkedAndVacation/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            TimeWorkedAndVacation timeWorkedAndVacation = _timeWorkedAndVacation.GetTimeWorkedAndVacationByID(id);
-            return View(timeWorkedAndVacation);
-        }
+        // public async Task<IActionResult> Delete(int? id)
+        // {
+        //     TimeWorkedAndVacation timeWorkedAndVacation = _timeWorkedAndVacation.GetTimeWorkedAndVacationByID(id);
+        //     return View(timeWorkedAndVacation);
+        // }
 
         // POST: TimeWorkedAndVacation/Delete/5
         [HttpPost, ActionName("Delete")]

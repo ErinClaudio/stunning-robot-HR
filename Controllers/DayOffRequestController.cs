@@ -14,7 +14,7 @@ namespace stunning_robot_HR.Controllers
     public class DayOffRequestController : Controller
     {
         private stunning_robot_HRContext _context;
-        private  IDayOffRequestRepository dayOffRequestRepository;
+        private  IDayOffRequestRepository dayOffRequestRepository; // this needs an unscore
         
         public DayOffRequestController(stunning_robot_HRContext context)
         {

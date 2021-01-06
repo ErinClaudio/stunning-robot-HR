@@ -23,7 +23,7 @@ namespace stunning_robot_HR.Data
         }
         public TimeWorkedAndVacation GetTimeWorkedAndVacationByID(int id)
         {
-            return _context.TimeWorkedAndVacation.Find(id);
+            return _context.TimeWorkedAndVacation.Find(id); // is the Find method?
         }
         
         public void InsertStaff(Staff staff)

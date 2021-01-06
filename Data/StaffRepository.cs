@@ -26,11 +26,11 @@ namespace stunning_robot_HR.Data
             return _context.Staff.Find(id);
         }
         
-        public Staff GetStaffByFullName(string searchString)
+        public IEnumerable<Staff> GetStaffByFullName(string searchString)
         {
-            return _context.Staff.FirstOrDefault(staff => staff.FullName.Contains(searchString));
+            return _context.Staff.Where(staff => staff.FullName.Contains(searchString)).AsEnumerable();
         }
-        
+        // previously .FirstOrDefault
         public void InsertStaff(Staff staff)
         {
             _context.Staff.Add(staff);
