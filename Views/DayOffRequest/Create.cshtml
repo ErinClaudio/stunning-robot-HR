@@ -4,7 +4,7 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1>Create-- this is the staff view</h1>
 
 <h4>DayOffRequest</h4>
 <hr />
@@ -23,14 +23,16 @@
                 <span asp-validation-for="EndDayOfTimeOffRequest" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="TotalNumberOfAvailableDaysOff" class="control-label"></label>
-                <input asp-for="TotalNumberOfAvailableDaysOff" class="form-control" />
-                <span asp-validation-for="TotalNumberOfAvailableDaysOff" class="text-danger"></span>
+                <h5>this number should only reflect what has been entered by Admin</h5>
+                <!--<label asp-for="TotalNumberOfAvailableDaysOff" class="control-label"></label>
+                <input asp-for="TotalNumberOfAvailableDaysOff" class="form-control"/>
+                <span asp-validation-for="TotalNumberOfAvailableDaysOff" class="text-danger"></span>-->
             </div>
             <div class="form-group">
-                <label asp-for="TotalNumberOfHoursWorked" class="control-label"></label>
-                <input asp-for="TotalNumberOfHoursWorked" class="form-control" />
-                <span asp-validation-for="TotalNumberOfHoursWorked" class="text-danger"></span>
+                <h5>this number should only reflect what has been entered by Admin</h5>
+                <!--<label asp-for="TotalNumberOfHoursWorked" class="control-label"></label>
+                <input asp-for="TotalNumberOfHoursWorked" class="form-control"/>
+                <span asp-validation-for="TotalNumberOfHoursWorked" class="text-danger"></span>-->
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

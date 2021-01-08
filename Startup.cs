@@ -28,6 +28,8 @@ namespace stunning_robot_HR
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddScoped<IStaffRepository, StaffRepository>();
+            services.AddScoped<ITimeWorkedAndVacation, TimeWorkedAndVacationRepository>(); 
             services.AddDbContext<stunning_robot_HRContext>(options =>
                 
             {
